@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "phaser": "file:./typings/typings.json"
+  },
+  "globalDevDependencies": {
+    "exorcist": "registry:dt/exorcist#0.4.0+20161121205806"
+  }
+}
