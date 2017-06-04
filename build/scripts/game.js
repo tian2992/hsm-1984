@@ -96,7 +96,6 @@ var RainbowText = function (_Phaser$Text) {
 		_this.startTimer();
 
 		_this.game.stage.addChild(_this);
-
 		return _this;
 	}
 
