@@ -5,11 +5,15 @@ class Player extends Phaser.Sprite {
         this.game = game;
         this.game.stage.addChild(this);
         this.game.physics.arcade.enable(this);
-        this.body.gravity.y = 0.2;
         this.body.collideWorldBounds = true;
-        this.body.bounce.y = 0.1;
         this.body.gravity.y = 1000;
 	}
+
+    update() {
+        if (this.body.blocked.down) {
+            this.body.velocity.y = -500;
+        }
+    }
 }
 
 export default Player;
