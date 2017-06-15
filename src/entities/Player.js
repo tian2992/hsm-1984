@@ -11,6 +11,8 @@ class Player extends Phaser.Sprite {
         this.totalJumps = 2;
         this.jumpsLeft = this.jumpsLeft;
         this.canJump = true;
+        var walk = this.animations.add('walk');
+        this.animations.play('walk', 10, true);
 	}
 
     update() {

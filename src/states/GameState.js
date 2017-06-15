@@ -9,10 +9,10 @@ class GameState extends Phaser.State {
         this.music.play();
 
 		this.background = this.game.add.group();
-		this.background.create(new Parallaxer(this.game, 0, 0, 2380, 480, 'background', -0.5, 0));
+		this.background.create(new Parallaxer(this.game, 0, 0, 2380, 480, 'background', -1, 0));
 		
 		this.foreground = this.game.add.group();
-		const floor = new Parallaxer(this.game, 0, this.game.world.bounds.height - 70, 2380, 70, 'foreground', -2, 0);
+		const floor = new Parallaxer(this.game, 0, this.game.world.bounds.height - 70, 2380, 70, 'foreground', -3, 0);
 		floor.enableBody = true;
 		floor.immovable = true;
 		this.foreground.create(floor);
