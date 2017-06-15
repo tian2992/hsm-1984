@@ -4,7 +4,7 @@ import Player from 'entities/Player';
 class GameState extends Phaser.State {
 
 	create() {
-		const center = { x: this.game.world.centerX, y: this.game.world.centerY / 4 }
+		const center = { x: this.game.world.centerX - 250, y: this.game.world.centerY / 4 }
 		this.music = this.game.add.audio('theme');
         this.music.play();
 
