@@ -19,7 +19,7 @@ class Player extends Phaser.Sprite {
         if (this.body.blocked.down) {
             this.jumpsLeft = this.totalJumps;
         }
-        if(this.game.input.activePointer.leftButton.isDown && this.jumpsLeft > 0 && this.canJump) {
+        if(this.game.input.activePointer.isDown && this.jumpsLeft > 0 && this.canJump) {
             this.body.velocity.y = -500;
             this.jumpsLeft--;
             this.canJump = false;
