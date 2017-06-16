@@ -5,7 +5,7 @@ import GameState from 'states/GameState';
 class Game extends Phaser.Game {
 
 	constructor() {
-		super(960, 480, Phaser.AUTO, 'content', null);
+		super(1280, 400, Phaser.AUTO, 'content', null);
 		this.state.add('BootState', BootState);
 		this.state.add('LoadState', LoadState);
 		this.state.add('GameState', GameState);
