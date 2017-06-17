@@ -6,10 +6,18 @@ class Game extends Phaser.Game {
 
 	constructor() {
 		super(1280, 400, Phaser.AUTO, 'content', null);
-		this.state.add('BootState', BootState);
-		this.state.add('LoadState', LoadState);
-		this.state.add('GameState', GameState);
-		this.state.start('BootState');
+
+		const { state } = this;
+
+		state.add('BootState', BootState);
+		state.add('LoadState', LoadState);
+		state.add('GameState', GameState);
+		state.start('BootState');
+	}
+
+	create() {
+		scale.ScaleManager.forceOrientation(true, false);
+		scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
 	}
 
 }
