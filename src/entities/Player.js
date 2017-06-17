@@ -15,6 +15,12 @@ class Player extends Phaser.Sprite {
         this.animations.play('walk', 10, true);
 	}
 
+    swapAssets(name) {
+        this.loadTexture(name, 0);
+        this.animations.add('walk');
+        this.animations.play('walk', 10, true);
+    }
+
     update() {
         if (this.body.blocked.down) {
             this.jumpsLeft = this.totalJumps;

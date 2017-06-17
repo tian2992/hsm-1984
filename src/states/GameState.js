@@ -1,6 +1,11 @@
 import Parallaxer from 'entities/Parallaxer';
 import Player from 'entities/Player';
 
+let downKey;
+let player;
+let timer;
+let currentTime;
+
 class GameState extends Phaser.State {
 
 	create() {
@@ -17,8 +22,25 @@ class GameState extends Phaser.State {
 		floor.immovable = true;
 		this.foreground.create(floor);
 
-    	const player = new Player(this.game, center, 'playa');
+    	player = new Player(this.game, center, 'playa');
 		this.physics.arcade.collide(player, floor);
+
+		currentTime = 0;
+		timer = this.game.time.create(false);
+    	timer.loop(1000, this.checkState, this);
+		timer.start();
+	}
+
+	update() {
+
+	}
+
+	checkState() {
+		currentTime++;
+		if(currentTime  == 10)
+		{
+			player.swapAssets('adventurer');
+		}
 	}
  }
 
