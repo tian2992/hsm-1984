@@ -1,0 +1,56 @@
+[{
+	"state": {
+		"time": 4,
+		"player": "adventurer",
+		"backgrounds": [{
+				"background": "bg1",
+				"speed": {
+					"x": -3,
+					"y": 0
+				}
+			},
+			{
+				"background": "bg2",
+				"speed": {
+					"x": -3,
+					"y": 0
+				}
+			},
+			{
+				"background": "bg3",
+				"speed": {
+					"x": -3,
+					"y": 0
+				}
+			}
+		]
+	}
+},
+{
+	"state": {
+		"time": 8,
+		"player": "playa",
+		"backgrounds": [{
+				"background": "bg1",
+				"speed": {
+					"x": -3,
+					"y": 0
+				}
+			},
+			{
+				"background": "bg2",
+				"speed": {
+					"x": -3,
+					"y": 0
+				}
+			},
+			{
+				"background": "bg3",
+				"speed": {
+					"x": -3,
+					"y": 0
+				}
+			}
+		]
+	}
+}]

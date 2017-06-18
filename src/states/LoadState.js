@@ -13,6 +13,8 @@ class LoadState extends Phaser.State {
         this.load.spritesheet('adventurer', 'assets/sprites/players/Adventurer/adventurer_tilesheet.png', 80, 110, 3);
 
         this.load.audio('theme', ['assets/audio/1984.mp3']);
+
+        this.load.json('states', 'assets/data/states.json');
     };
 
     create() {
