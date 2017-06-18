@@ -1,93 +1,98 @@
-[{
-		"state": {
-			"time": -10,
-			"player": "playa",
-			"backgrounds": [{
-					"background": "background",
-					"useWorldHeight": true,
-					"speed": {
-						"x": -1,
-						"y": 0
-					}
-				},
-				{
-					"background": "groundGrass",
-					"useWorldHeight": false,
-					"speed": {
-						"x": -3,
-						"y": 0
-					}
-				}
-			]
-		}
-	},
-	{
-		"state": {
-			"time": 4,
-			"player": "adventurer",
-			"backgrounds": [{
-					"background": "background",
-					"useWorldHeight": true,
-					"speed": {
-						"x": -1,
-						"y": 0
-					}
-				},
-				{
-					"background": "groundDirt",
-					"useWorldHeight": false,
-					"speed": {
-						"x": -3,
-						"y": 0
-					}
-				}
-			]
-		}
-	},
-	{
-		"state": {
-			"time": 15,
-			"player": "playa",
-			"backgrounds": [{
-					"background": "background",
-					"useWorldHeight": true,
-					"speed": {
-						"x": -1,
-						"y": 0
-					}
-				},
-				{
-					"background": "groundIce",
-					"useWorldHeight": false,
-					"speed": {
-						"x": -3,
-						"y": 0
-					}
-				}
-			]
-		}
-	},
-	{
-		"state": {
-			"time": 20,
-			"player": "adventurer",
-			"backgrounds": [{
-					"background": "background",
-					"useWorldHeight": true,
-					"speed": {
-						"x": -1,
-						"y": 0
-					}
-				},
-				{
-					"background": "groundDirt",
-					"useWorldHeight": false,
-					"speed": {
-						"x": -3,
-						"y": 0
-					}
-				}
-			]
-		}
-	}
+[
+  {
+    "state": {
+      "time": -10,
+      "player": "playa",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundGrass",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": 4,
+      "player": "adventurer",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundDirt",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": 15,
+      "player": "playa",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundIce",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": 20,
+      "player": "adventurer",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundDirt",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ]
+    }
+  }
 ]

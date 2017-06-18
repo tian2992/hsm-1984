@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "gulp",
-    "production": "gulp --production"
+    "production": "gulp --production",
+    "test": "npm semistandard"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "yargs": "^4.6.0"
   },
   "dependencies": {
-    "phaser": "^2.4.7"
+    "phaser": "^2.4.7",
+    "semistandard": "^11.0.0"
   }
 }
