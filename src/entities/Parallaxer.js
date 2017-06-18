@@ -18,6 +18,10 @@ class Parallaxer extends Phaser.TileSprite {
     this.game.stage.addChild(this);
   }
 
+  swapAssets(name) {
+      this.loadTexture(name, 0);
+  }
+
   update () {
     if (!this.speed) {
       return;
@@ -28,8 +32,8 @@ class Parallaxer extends Phaser.TileSprite {
 
   setSpeed(hSpeed, vSpeed) {
     this.speed = {
-            x: hSpeed,
-            y: vSpeed
+      x: hSpeed,
+      y: vSpeed
     };
   }
 }

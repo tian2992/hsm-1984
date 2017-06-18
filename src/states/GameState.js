@@ -13,38 +13,43 @@ class GameState extends Phaser.State {
 
 	create() {
 		states = this.game.cache.getJSON('states');
-		const center = { x: this.game.world.centerX - 250, y: this.game.world.centerY / 4 }
+		const center = { x: this.game.world.centerX - 250, y: this.game.world.bounds.height - 200 }
 		this.music = this.game.add.audio('theme');
         this.music.play();
-
 		this.background = this.game.add.group();
-		bgParallaxer = new Parallaxer(this.game, 0, 0, 2380, 480, 'background');
-		this.background.create(bgParallaxer);
-		
-		this.foreground = this.game.add.group();
-		fgParallaxer = new Parallaxer(this.game, 0, this.game.world.bounds.height - 70, 2380, 70, 'foreground');
-		fgParallaxer.enableBody = true;
-		fgParallaxer.immovable = true;
-		this.foreground.create(fgParallaxer);
-
+		this.entities = this.game.add.group();
+		this.createBackgrounds(states[0].state);
     	player = new Player(this.game, center, 'playa');
-		this.physics.arcade.collide(player, fgParallaxer);
-
+		this.entities.add(player);
 		currentTime = 0;
 		timer = this.game.time.create(false);
     	timer.loop(1000, this.checkState, this);
 		timer.start();
 	}
 
-	initScrolling()
+	createBackgrounds(state)
 	{
-		bgParallaxer.setSpeed(-1, 0);
-		fgParallaxer.setSpeed(-3, 0);
+		this.background.forEach((bg) => {
+			this.background.remove(bg);
+		});
+
+		state.backgrounds.forEach((bg) => {
+			let height = bg.useWorldHeight? this.game.world.height : this.game.cache.getImage(bg.background).height;
+			const newParallaxer = new Parallaxer(this.game, 0, this.game.world.bounds.height - height, this.game.world.width, height, bg.background);
+			newParallaxer.setSpeed(bg.speed.x, bg.speed.y);
+			this.background.add(newParallaxer);
+		});
 	}
 
 	update() {
 
 	}
+
+	bounceOutOfScene(callbackFunction) {
+        const tween = this.game.add.tween(this);
+        tween.to({y: -this.game.world.height}, 3000, Phaser.Easing.Bounce.Out);
+        tween.start();
+    }
 
 	checkState() {
 		currentTime++;
@@ -52,7 +57,10 @@ class GameState extends Phaser.State {
 			let state = item.state;
     		if(state.time == currentTime) {
 				console.log(`doing state change! ${state.time}   ${currentTime}`);
-				return player.swapAssets(state.player);
+				return player.bounceOutOfScene(() => {
+					this.createBackgrounds(state);
+					player.swapAssets(state.player);
+				});
 			}
 		});
 	}
