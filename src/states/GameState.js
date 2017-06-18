@@ -45,12 +45,6 @@ class GameState extends Phaser.State {
 
 	}
 
-	bounceOutOfScene(callbackFunction) {
-        const tween = this.game.add.tween(this);
-        tween.to({y: -this.game.world.height}, 3000, Phaser.Easing.Bounce.Out);
-        tween.start();
-    }
-
 	checkState() {
 		currentTime++;
 		states.forEach((item) => {
