@@ -20,6 +20,44 @@
             "y": 0
           }
         }
+      ],
+      "items": [
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        }
       ]
     }
   },
@@ -43,6 +81,44 @@
             "x": -3,
             "y": 0
           }
+        }
+      ],
+      "items": [
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
         }
       ]
     }
@@ -68,6 +144,44 @@
             "y": 0
           }
         }
+      ],
+      "items": [
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        }
       ]
     }
   },
@@ -91,6 +205,44 @@
             "x": -3,
             "y": 0
           }
+        }
+      ],
+      "items": [
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "redGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
+        },
+        {
+          "sprite" : "blueGem",
+          "score" : 300
         }
       ]
     }

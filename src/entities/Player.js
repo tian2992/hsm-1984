@@ -14,6 +14,7 @@ class Player extends Phaser.Sprite {
     this.game.input.mouse.capture = true;
     this.jumpsLeft = this.jumpsLeft;
     this.canJump = true;
+    this.score = 0;
     this.animations.add('walk');
     this.animations.play('walk', 10, true);
     spawnY = center.y;
