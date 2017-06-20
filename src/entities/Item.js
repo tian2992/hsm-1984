@@ -1,4 +1,4 @@
-import {Sprite} from 'Phaser';
+import { Sprite, Easing } from 'Phaser';
 
 class Item extends Sprite {
   constructor (game, center, asset, score, frame) {
@@ -10,22 +10,11 @@ class Item extends Sprite {
     this.body.enable = false;
     this.score = score;
     this.type = 'item';
-    this.goingUp = false;
-    this.floatingTime = 0;
+    this.game.add.tween(this).to({ y: center.y + 20 }, 500, Easing.Linear.None, true, center.y - 20, 500, true);
   }
 
   update () {
-    this.floatingtime++;
     this.position.x -= 2.5;
-    if (this.goingUp) {
-      this.position.y += 0.8;
-    } else {
-      this.position.y -= 0.8;
-    }
-
-    if (this.floatingTime <= 60) {
-      this.goingUp = !this.goingUp;
-    }
   }
 }
 
