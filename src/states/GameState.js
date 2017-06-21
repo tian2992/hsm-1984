@@ -1,6 +1,6 @@
 import Parallaxer from 'entities/Parallaxer';
 import Player from 'entities/Player';
-import Items from 'groups/Items';
+import Collectables from 'groups/Collectables';
 import { State, Signal } from 'Phaser';
 
 let player;
@@ -17,9 +17,9 @@ class GameState extends State {
     this.background = this.game.add.group();
     this.entities = this.game.add.group();
 
-    this.items = new Items(this.game);
+    this.items = new Collectables(this.game);
     this.createBackgrounds(states[0].state);
-    this.items.createAreaItems(states[0].state);
+    this.items.createAreaItems(states[0].state.items);
     player = new Player(this.game, center, 'playa');
     player.body.onCollide = new Signal();
     player.body.onCollide.add(this.items.resolveItemCollision, this);
@@ -60,7 +60,7 @@ class GameState extends State {
       let state = item.state;
       if (state.time === currentTime) {
         console.log(`doing state change! ${state.time}   ${currentTime}`);
-        this.items.createAreaItems(state);
+        this.items.createAreaItems(state.items);
         return player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
           player.swapAssets(state.player);

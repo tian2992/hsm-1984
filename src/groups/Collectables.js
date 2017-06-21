@@ -21,7 +21,7 @@ class Items extends Group {
       return;
     }
     const randomHeight = this.game.rnd.pick(itemHeights);
-    selectedItem.position.x = player.position.x + 1000;
+    selectedItem.position.x = this.game.world.width + selectedItem.width;
     selectedItem.position.y = randomHeight;
     console.log('item spawned at ' + selectedItem.position);
     selectedItem.visible = true;
@@ -31,12 +31,14 @@ class Items extends Group {
     timer.add(timerdelay, () => { this.spawnItem(player, timer); }, this);
   }
 
-  createAreaItems (state) {
+  createAreaItems (collectableType) {
     super.forEach((item) => {
       super.remove(item);
     });
 
-    state.items.forEach((item) => {
+    console.log(collectableType);
+
+    collectableType.forEach((item) => {
       const initialPosition = {x: this.game.world.centerX, y: this.game.world.centerY};
       const newItem = new Item(this.game, initialPosition, item.sprite, item.score);
       super.add(newItem);
