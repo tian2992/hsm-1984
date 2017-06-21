@@ -1,7 +1,7 @@
 [
   {
     "state": {
-      "time": -10,
+      "time": "-10",
       "player": "playa",
       "backgrounds": [
         {
@@ -63,7 +63,7 @@
   },
   {
     "state": {
-      "time": 4,
+      "time": "00:19",
       "player": "adventurer",
       "backgrounds": [
         {
@@ -125,7 +125,7 @@
   },
   {
     "state": {
-      "time": 15,
+      "time": "00:55",
       "player": "playa",
       "backgrounds": [
         {
@@ -187,7 +187,7 @@
   },
   {
     "state": {
-      "time": 20,
+      "time": "01:41",
       "player": "adventurer",
       "backgrounds": [
         {
@@ -243,6 +243,78 @@
         {
           "sprite" : "blueGem",
           "score" : 300
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": "02:19",
+      "player": "playa",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundIce",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": "02:37",
+      "player": "adventurer",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundDirt",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": "03:17",
+      "player": "playa",
+      "backgrounds": [
+        {
+          "background": "background",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundIce",
+          "useWorldHeight": false,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
         }
       ]
     }

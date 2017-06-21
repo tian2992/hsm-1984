@@ -22,7 +22,6 @@ class Player extends Phaser.Sprite {
 
   bounceOutOfScene (onCompleteFn) {
     const tween = this.game.add.tween(this);
-    let y = this.y;
     this.body.gravity.y = 0;
     this.body.collideWorldBounds = false;
     tween.to({y: -this.game.world.height}, 2000, Phaser.Easing.Bounce.Out);
