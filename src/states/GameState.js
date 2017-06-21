@@ -1,7 +1,8 @@
 import Parallaxer from 'entities/Parallaxer';
 import Player from 'entities/Player';
+import Collectables from 'groups/Collectables';
+import { State, Signal } from 'Phaser';
 import ScreenFader from 'objects/ScreenFader';
-const Phaser = require('Phaser');
 
 let player;
 let timer;
@@ -10,7 +11,7 @@ let states;
 let fader;
 let prettyTime;
 
-class GameState extends Phaser.State {
+class GameState extends State {
   create () {
     states = this.game.cache.getJSON('states');
     const center = { x: this.game.world.centerX - 250, y: this.game.world.bounds.height - 200 };
@@ -18,14 +19,21 @@ class GameState extends Phaser.State {
     this.music.play();
     this.background = this.game.add.group();
     this.entities = this.game.add.group();
+
+    this.items = new Collectables(this.game);
     this.overlays = this.game.add.group();
     this.createBackgrounds(states[0].state);
+    this.items.createAreaItems(states[0].state.items);
     player = new Player(this.game, center, 'playa');
+    player.body.onCollide = new Signal();
+    player.body.onCollide.add(this.items.resolveItemCollision, this);
     this.entities.add(player);
     fader = new ScreenFader(this.game, {x: 0, y: 0}, 'progressBar', '#F0000');
     currentTime = 0;
     timer = this.game.time.create(false);
     timer.loop(1000, this.checkState, this);
+    const timerdelay = this.game.rnd.between(this.items.minimumTimeToSpawnItem, this.items.maximumTimeToSpawnItem);
+    timer.add(timerdelay, () => { this.items.spawnItem(player, timer); }, this.items);
     timer.start();
   }
 
@@ -43,7 +51,7 @@ class GameState extends Phaser.State {
   }
 
   update () {
-
+    this.game.physics.arcade.collide(player, this.items);
   }
 
   secondstoMinutes (value) {
@@ -62,6 +70,7 @@ class GameState extends Phaser.State {
       let state = item.state;
       if (state.time === prettyTime) {
         console.log(`doing state change! ${state.time}   ${currentTime}`);
+        this.items.createAreaItems(state.items);
         fader.fadeIn(800);
         return player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
