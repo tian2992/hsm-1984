@@ -1,9 +1,9 @@
 import { Group } from 'Phaser';
 import Item from '../entities/Item';
 
-const itemHeights = [160, 200, 250];
 const minimumTimeToSpawnItem = 2000;
 const maximumTimeToSpawnItem = 4000;
+let itemHeights = [];
 
 class Items extends Group {
   constructor (game) {
@@ -12,6 +12,7 @@ class Items extends Group {
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
     this.maximumTimeToSpawnItem = maximumTimeToSpawnItem;
     this.itemsSpawned = 0;
+    itemHeights = [game.world.height * 0.2, game.world.height * 0.35, game.world.height * 0.5];
   }
 
   spawnItem (player, timer) {
@@ -21,8 +22,7 @@ class Items extends Group {
       return;
     }
     const randomHeight = this.game.rnd.pick(itemHeights);
-    selectedItem.position.x = this.game.world.width + selectedItem.width;
-    selectedItem.position.y = randomHeight;
+    selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
     console.log('item spawned at ' + selectedItem.position);
     selectedItem.visible = true;
     selectedItem.body.enable = true;
