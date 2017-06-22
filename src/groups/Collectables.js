@@ -47,6 +47,7 @@ class Items extends Group {
 
   resolveItemCollision (player, item) {
     player.score += item.score;
+    player.doDamage();
     console.log('player score is now ' + player.score);
     item.visible = false;
     item.body.enable = false;

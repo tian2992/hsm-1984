@@ -2,6 +2,7 @@ const Phaser = require('Phaser');
 let spawnY;
 let gravity = 1000;
 let totalJumps = 2;
+let damageTween;
 
 class Player extends Phaser.Sprite {
   constructor (game, center, asset, frame) {
@@ -18,6 +19,7 @@ class Player extends Phaser.Sprite {
     this.animations.add('walk');
     this.animations.play('walk', 10, true);
     spawnY = center.y;
+    damageTween = this.game.add.tween(this).to({ alpha: 0 }, 50, Phaser.Easing.Linear.None, false, 1, 5, true);
   }
 
   bounceOutOfScene (onCompleteFn) {
@@ -43,6 +45,10 @@ class Player extends Phaser.Sprite {
     this.loadTexture(name, 0);
     this.animations.add('walk');
     this.animations.play('walk', 10, true);
+  }
+
+  doDamage () {
+    damageTween.start();
   }
 
   update () {
