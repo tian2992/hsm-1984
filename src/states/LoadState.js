@@ -19,6 +19,10 @@ class LoadState extends Phaser.State {
     this.load.image('blueGem', 'assets/sprites/items/gemBlue.png');
     this.load.image('redGem', 'assets/sprites/items/gemRed.png');
 
+    this.load.image('blueButton', 'assets/sprites/ui/blue_button09.png');
+    this.load.image('greenButton', 'assets/sprites/ui/green_button09.png');
+    this.load.image('yellowButton', 'assets/sprites/ui/yellow_button09.png');
+
     this.load.spritesheet('playa', 'assets/sprites/players/Player/player_tilesheet.png', 80, 110, 3);
     this.load.spritesheet('adventurer', 'assets/sprites/players/Adventurer/adventurer_tilesheet.png', 80, 110, 3);
     this.load.audio('theme', ['assets/audio/1984.mp3']);
@@ -27,7 +31,7 @@ class LoadState extends Phaser.State {
   }
 
   create () {
-    this.state.start('GameState');
+    this.state.start('TitleState');
   }
 }
 
