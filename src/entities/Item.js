@@ -10,7 +10,12 @@ class Item extends Sprite {
     this.body.enable = false;
     this.score = score;
     this.type = 'item';
-    this.game.add.tween(this).to({ y: center.y + 20 }, 500, Easing.Linear.None, true, center.y - 20, 500, true);
+  }
+
+  setPosition (x, y) {
+    this.position.x = x;
+    this.position.y = y;
+    this.game.add.tween(this).to({ y: y + 10 }, 500, Easing.Linear.None, true, y, 500, true);
   }
 
   update () {
