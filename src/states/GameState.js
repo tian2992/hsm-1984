@@ -41,7 +41,7 @@ class GameState extends State {
     this.background.forEach((bg) => {
       this.background.remove(bg);
     });
-
+    this.game.stage.backgroundColor = state.bgColor || '#FFFFF';
     state.backgrounds.forEach((bg) => {
       let height = bg.useWorldHeight ? this.game.world.height : this.game.cache.getImage(bg.background).height;
       const newParallaxer = new Parallaxer(this.game, 0, this.game.world.bounds.height - height, this.game.world.width, height, bg.background);

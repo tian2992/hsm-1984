@@ -13,11 +13,20 @@ class LoadState extends Phaser.State {
     this.load.image('groundIce', 'assets/sprites/backgrounds/groundIce.png');
     this.load.image('groundDirt', 'assets/sprites/backgrounds/groundDirt.png');
 
+    // for area 1
+    this.load.image('mountains', 'assets/sprites/backgrounds/Area1/mountains.png');
+    this.load.image('bgTrees', 'assets/sprites/backgrounds/Area1/bgTrees.png');
+    this.load.image('fgTrees', 'assets/sprites/backgrounds/Area1/fgTrees.png');
+
     this.load.spritesheet('playa', 'assets/sprites/players/Player/player_tilesheet.png', 80, 110, 3);
     this.load.spritesheet('adventurer', 'assets/sprites/players/Adventurer/adventurer_tilesheet.png', 80, 110, 3);
 
     this.load.image('blueGem', 'assets/sprites/items/gemBlue.png');
     this.load.image('redGem', 'assets/sprites/items/gemRed.png');
+
+    this.load.image('blueButton', 'assets/sprites/ui/blue_button09.png');
+    this.load.image('greenButton', 'assets/sprites/ui/green_button09.png');
+    this.load.image('yellowButton', 'assets/sprites/ui/yellow_button09.png');
 
     this.load.spritesheet('playa', 'assets/sprites/players/Player/player_tilesheet.png', 80, 110, 3);
     this.load.spritesheet('adventurer', 'assets/sprites/players/Adventurer/adventurer_tilesheet.png', 80, 110, 3);
@@ -27,7 +36,7 @@ class LoadState extends Phaser.State {
   }
 
   create () {
-    this.state.start('GameState');
+    this.state.start('TitleState');
   }
 }
 

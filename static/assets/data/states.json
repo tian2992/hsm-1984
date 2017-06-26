@@ -3,12 +3,29 @@
     "state": {
       "time": "-10",
       "player": "playa",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
-          "background": "background",
+          "background": "mountains",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.25,
+            "y": 0
+          }
+        },
+        {
+          "background": "bgTrees",
           "useWorldHeight": true,
           "speed": {
             "x": -1,
+            "y": 0
+          }
+        },
+        {
+          "background": "fgTrees",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1.5,
             "y": 0
           }
         },
@@ -65,9 +82,18 @@
     "state": {
       "time": "00:19",
       "player": "adventurer",
+      "bgColor": "#FFFFF",
       "backgrounds": [
         {
-          "background": "background",
+          "background": "mountains",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.25,
+            "y": 0
+          }
+        },
+        {
+          "background": "bgTrees",
           "useWorldHeight": true,
           "speed": {
             "x": -1,
@@ -75,7 +101,15 @@
           }
         },
         {
-          "background": "groundDirt",
+          "background": "fgTrees",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1.5,
+            "y": 0
+          }
+        },
+        {
+          "background": "groundGrass",
           "useWorldHeight": false,
           "speed": {
             "x": -3,
@@ -127,6 +161,7 @@
     "state": {
       "time": "00:55",
       "player": "playa",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
           "background": "background",
@@ -189,6 +224,7 @@
     "state": {
       "time": "01:41",
       "player": "adventurer",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
           "background": "background",
@@ -251,6 +287,7 @@
     "state": {
       "time": "02:19",
       "player": "playa",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
           "background": "background",
@@ -275,6 +312,7 @@
     "state": {
       "time": "02:37",
       "player": "adventurer",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
           "background": "background",
@@ -299,6 +337,7 @@
     "state": {
       "time": "03:17",
       "player": "playa",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
           "background": "background",
