@@ -36,7 +36,7 @@ class LoadState extends Phaser.State {
   }
 
   create () {
-    this.state.start('TitleState');
+    this.state.start('GameState');
   }
 }
 
