@@ -2,7 +2,7 @@
   {
     "state": {
       "time": "-10",
-      "player": "playa",
+      "player": "charli",
       "bgColor": "#0BABFE",
       "backgrounds": [
         {
@@ -30,8 +30,8 @@
           }
         },
         {
-          "background": "groundGrass",
-          "useWorldHeight": false,
+          "background": "ground",
+          "useWorldHeight": true,
           "speed": {
             "x": -3,
             "y": 0
@@ -81,7 +81,7 @@
   {
     "state": {
       "time": "00:19",
-      "player": "adventurer",
+      "player": "meza",
       "bgColor": "#FFFFF",
       "backgrounds": [
         {
@@ -109,8 +109,8 @@
           }
         },
         {
-          "background": "groundGrass",
-          "useWorldHeight": false,
+          "background": "ground",
+          "useWorldHeight": true,
           "speed": {
             "x": -3,
             "y": 0
@@ -153,207 +153,6 @@
         {
           "sprite" : "blueGem",
           "score" : 300
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "00:55",
-      "player": "playa",
-      "bgColor": "#0BABFE",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundIce",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ],
-      "items": [
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "01:41",
-      "player": "adventurer",
-      "bgColor": "#0BABFE",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundDirt",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ],
-      "items": [
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "02:19",
-      "player": "playa",
-      "bgColor": "#0BABFE",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundIce",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "02:37",
-      "player": "adventurer",
-      "bgColor": "#0BABFE",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundDirt",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "03:17",
-      "player": "playa",
-      "bgColor": "#0BABFE",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundIce",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
         }
       ]
     }

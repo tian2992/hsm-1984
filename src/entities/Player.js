@@ -1,14 +1,14 @@
 const Phaser = require('Phaser');
 let spawnY;
-let gravity = 1000;
+let gravity = 980;
 let totalJumps = 2;
+let jumpHeight = -300;
 let damageTween;
 
 class Player extends Phaser.Sprite {
   constructor (game, center, asset, frame) {
     super(game, center.x, center.y, asset, frame);
     this.game = game;
-    this.game.stage.addChild(this);
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
     this.body.gravity.y = gravity;
@@ -16,8 +16,9 @@ class Player extends Phaser.Sprite {
     this.jumpsLeft = this.jumpsLeft;
     this.canJump = true;
     this.score = 0;
-    this.animations.add('walk');
-    this.animations.play('walk', 10, true);
+    this.animations.add('walk', [0, 1, 2]);
+    this.animations.add('jump', [3]);
+    this.animations.play('walk', 8, true);
     spawnY = center.y;
     damageTween = this.game.add.tween(this).to({ alpha: 0 }, 50, Phaser.Easing.Linear.None, false, 1, 5, true);
   }
@@ -43,8 +44,9 @@ class Player extends Phaser.Sprite {
 
   swapAssets (name) {
     this.loadTexture(name, 0);
-    this.animations.add('walk');
-    this.animations.play('walk', 10, true);
+    this.animations.add('walk', [0, 1, 2]);
+    this.animations.add('jump', [3]);
+    this.animations.play('walk', 8, true);
   }
 
   doDamage () {
@@ -53,12 +55,15 @@ class Player extends Phaser.Sprite {
 
   update () {
     if (this.body.blocked.down) {
+      this.body.velocity.y = 0;
+      this.animations.play('walk', 8, true);
       this.jumpsLeft = totalJumps;
     }
     if (this.game.input.activePointer.isDown && this.jumpsLeft > 0 && this.canJump) {
-      this.body.velocity.y = -500;
+      this.body.velocity.y = jumpHeight;
       this.jumpsLeft--;
       this.canJump = false;
+      this.animations.play('jump', 8, false);
     }
     if (this.game.input.activePointer.leftButton.isUp) {
       this.canJump = true;

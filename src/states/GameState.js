@@ -27,7 +27,7 @@ class GameState extends State {
     items = new Collectables(this.game);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
-    player = new Player(this.game, center, 'playa');
+    player = new Player(this.game, center, 'charli');
     player.body.onCollide = new Signal();
     player.body.onCollide.add(items.resolveItemCollision, this);
     entities.add(player);
