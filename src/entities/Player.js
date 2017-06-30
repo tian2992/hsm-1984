@@ -2,7 +2,7 @@ const Phaser = require('Phaser');
 let spawnY;
 let gravity = 980;
 let totalJumps = 2;
-let jumpHeight = -300;
+let jumpHeight = -350;
 let damageTween;
 
 class Player extends Phaser.Sprite {
