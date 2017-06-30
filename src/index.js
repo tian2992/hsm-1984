@@ -5,7 +5,7 @@ const Phaser = require('Phaser');
 
 class Game extends Phaser.Game {
   constructor () {
-    super(960, 480, Phaser.AUTO, 'content', null);
+    super(320, 180, Phaser.AUTO, 'content', null, false, true);
 
     const { state } = this;
 
@@ -13,11 +13,6 @@ class Game extends Phaser.Game {
     state.add('LoadState', LoadState);
     state.add('GameState', GameState);
     state.start('BootState');
-  }
-
-  create () {
-    this.scale.ScaleManager.forceOrientation(true, false);
-    this.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
   }
 }
 

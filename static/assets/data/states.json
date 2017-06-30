@@ -2,10 +2,19 @@
   {
     "state": {
       "time": "-10",
-      "player": "playa",
+      "player": "charli",
+      "bgColor": "#0BABFE",
       "backgrounds": [
         {
-          "background": "background",
+          "background": "mountains",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.25,
+            "y": 0
+          }
+        },
+        {
+          "background": "bgTrees",
           "useWorldHeight": true,
           "speed": {
             "x": -1,
@@ -13,8 +22,16 @@
           }
         },
         {
-          "background": "groundGrass",
-          "useWorldHeight": false,
+          "background": "fgTrees",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1.5,
+            "y": 0
+          }
+        },
+        {
+          "background": "ground",
+          "useWorldHeight": true,
           "speed": {
             "x": -3,
             "y": 0
@@ -64,10 +81,19 @@
   {
     "state": {
       "time": "00:19",
-      "player": "adventurer",
+      "player": "meza",
+      "bgColor": "#FFFFF",
       "backgrounds": [
         {
-          "background": "background",
+          "background": "mountains",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.25,
+            "y": 0
+          }
+        },
+        {
+          "background": "bgTrees",
           "useWorldHeight": true,
           "speed": {
             "x": -1,
@@ -75,8 +101,16 @@
           }
         },
         {
-          "background": "groundDirt",
-          "useWorldHeight": false,
+          "background": "fgTrees",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1.5,
+            "y": 0
+          }
+        },
+        {
+          "background": "ground",
+          "useWorldHeight": true,
           "speed": {
             "x": -3,
             "y": 0
@@ -119,202 +153,6 @@
         {
           "sprite" : "blueGem",
           "score" : 300
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "00:55",
-      "player": "playa",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundIce",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ],
-      "items": [
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "01:41",
-      "player": "adventurer",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundDirt",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ],
-      "items": [
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "02:19",
-      "player": "playa",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundIce",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "02:37",
-      "player": "adventurer",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundDirt",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
-        }
-      ]
-    }
-  },
-  {
-    "state": {
-      "time": "03:17",
-      "player": "playa",
-      "backgrounds": [
-        {
-          "background": "background",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -1,
-            "y": 0
-          }
-        },
-        {
-          "background": "groundIce",
-          "useWorldHeight": false,
-          "speed": {
-            "x": -3,
-            "y": 0
-          }
         }
       ]
     }

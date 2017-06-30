@@ -15,7 +15,6 @@ class Parallaxer extends Phaser.TileSprite {
   constructor (game, x, y, width, height, key) {
     super(game, x, y, width, height, key);
     this.game = game;
-    this.game.stage.addChild(this);
   }
 
   swapAssets (name) {
