@@ -51,6 +51,7 @@ class Items extends Group {
     console.log('player score is now ' + player.score);
     item.visible = false;
     item.body.enable = false;
+    item.setPosition(this.game.world.width + item.width, item.height);
   }
 }
 

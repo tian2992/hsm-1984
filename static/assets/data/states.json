@@ -40,39 +40,11 @@
       ],
       "items": [
         {
-          "sprite" : "blueGem",
+          "sprite" : "coin",
           "score" : 300
         },
         {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
+          "sprite" : "coin",
           "score" : 300
         }
       ]
@@ -119,39 +91,11 @@
       ],
       "items": [
         {
-          "sprite" : "blueGem",
+          "sprite" : "coin",
           "score" : 300
         },
         {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "redGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
-          "score" : 300
-        },
-        {
-          "sprite" : "blueGem",
+          "sprite" : "coin",
           "score" : 300
         }
       ]

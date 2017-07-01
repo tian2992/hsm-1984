@@ -18,6 +18,7 @@ let worldBounds = {width: 0, height: 0};
 const logicWorldBounds = {width: 320, height: 200};
 const worldHeightDifferential = 20;
 const playerHeightDifferential = 24;
+let timerUI;
 
 class GameState extends State {
   create () {
@@ -78,6 +79,7 @@ class GameState extends State {
     currentTime++;
     prettyTime = this.secondstoMinutes(currentTime);
     this.game.debug.text(prettyTime, 10, 15);
+
     states.forEach((item) => {
       let state = item.state;
       if (state.time === prettyTime) {

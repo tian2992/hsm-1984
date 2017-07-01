@@ -12,6 +12,8 @@ class Player extends Phaser.Sprite {
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
     this.body.gravity.y = gravity;
+    this.body.width = 30;
+    this.body.height = 55;
     this.game.input.mouse.capture = true;
     this.jumpsLeft = this.jumpsLeft;
     this.canJump = true;

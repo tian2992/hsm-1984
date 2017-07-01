@@ -6,10 +6,14 @@ class Item extends Sprite {
     this.game = game;
     this.game.stage.addChild(this);
     this.game.physics.arcade.enable(this);
+    this.body.width = 30;
+    this.body.height = 30;
     this.visible = false;
     this.body.enable = false;
     this.score = score;
     this.type = 'item';
+    this.animations.add('idle', [0, 1, 2, 3]);
+    this.animations.play('idle', 8, true);
   }
 
   setPosition (x, y) {
