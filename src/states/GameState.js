@@ -19,6 +19,7 @@ const logicWorldBounds = {width: 320, height: 200};
 const worldHeightDifferential = 20;
 const playerHeightDifferential = 24;
 let timerUI;
+let isDebug = false;
 
 class GameState extends State {
   create () {
@@ -46,7 +47,7 @@ class GameState extends State {
     timer = this.game.time.create(false);
     timer.loop(1000, this.checkState, this);
     const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
-    timer.add(timerdelay, () => { items.spawnItem(player, timer); }, items);
+    timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
     timer.start();
   }
 
@@ -65,6 +66,14 @@ class GameState extends State {
 
   update () {
     this.game.physics.arcade.collide(player, items);
+  }
+
+  render () {
+    if (isDebug) {
+      items.forEach((item) => {
+        this.game.debug.body(item, 'blue', false);
+      });
+    }
   }
 
   secondstoMinutes (value) {
