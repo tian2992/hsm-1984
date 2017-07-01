@@ -14,16 +14,25 @@ let backgrounds;
 let entities;
 let items;
 let overlays;
+let worldBounds = {width: 0, height: 0};
+const logicWorldBounds = {width: 320, height: 200};
+const worldHeightDifferential = 20;
+const playerHeightDifferential = 24;
 
 class GameState extends State {
   create () {
+    worldBounds.width = logicWorldBounds.width;
+    worldBounds.height = logicWorldBounds.height - playerHeightDifferential;
+    this.game.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     states = this.game.cache.getJSON('states');
-    const center = { x: this.game.world.centerX - 250, y: this.game.world.bounds.height - 200 };
+    const center = { x: this.game.world.centerX - 100, y: this.game.world.bounds.height - 200 };
     this.music = this.game.add.audio('theme');
     this.music.play();
     backgrounds = this.game.add.group();
     entities = this.game.add.group();
     overlays = this.game.add.group();
+    overlays.add(this.game.add.sprite(0, 0, 'letterBox'));
+    overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
     items = new Collectables(this.game);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
@@ -46,8 +55,8 @@ class GameState extends State {
     });
     this.game.stage.backgroundColor = state.bgColor || '#FFFFF';
     state.backgrounds.forEach((bg) => {
-      let height = bg.useWorldHeight ? this.game.world.height : this.game.cache.getImage(bg.background).height;
-      const newParallaxer = new Parallaxer(this.game, 0, this.game.world.bounds.height - height, this.game.world.width, height, bg.background);
+      let height = bg.useWorldHeight ? logicWorldBounds.height - worldHeightDifferential : this.game.cache.getImage(bg.background).height - worldHeightDifferential;
+      const newParallaxer = new Parallaxer(this.game, 0, logicWorldBounds.height - height, logicWorldBounds.width, height, bg.background);
       newParallaxer.setSpeed(bg.speed.x, bg.speed.y);
       backgrounds.add(newParallaxer);
     });
@@ -68,7 +77,7 @@ class GameState extends State {
   checkState () {
     currentTime++;
     prettyTime = this.secondstoMinutes(currentTime);
-    this.game.debug.text(prettyTime, 10, 20);
+    this.game.debug.text(prettyTime, 10, 15);
     states.forEach((item) => {
       let state = item.state;
       if (state.time === prettyTime) {

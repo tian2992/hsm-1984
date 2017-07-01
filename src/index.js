@@ -5,7 +5,7 @@ const Phaser = require('Phaser');
 
 class Game extends Phaser.Game {
   constructor () {
-    super(320, 180, Phaser.AUTO, 'content', null, false, true);
+    super(320, 200, Phaser.AUTO, 'content', null, false, true);
 
     const { state } = this;
 
