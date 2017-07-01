@@ -6,8 +6,6 @@ class Item extends Sprite {
     this.game = game;
     this.game.stage.addChild(this);
     this.game.physics.arcade.enable(this);
-    this.visible = false;
-    this.body.enable = false;
     this.score = score;
     this.type = 'item';
   }
