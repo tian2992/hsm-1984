@@ -15,6 +15,8 @@ let entities;
 let items;
 let overlays;
 let worldBounds = {width: 0, height: 0};
+let lyricsText;
+let lyricsData;
 const logicWorldBounds = {width: 320, height: 200};
 const worldHeightDifferential = 20;
 const playerHeightDifferential = 24;
@@ -27,6 +29,9 @@ class GameState extends State {
     worldBounds.height = logicWorldBounds.height - playerHeightDifferential;
     this.game.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     states = this.game.cache.getJSON('states');
+    lyricsData = this.game.cache.getJSON('lyrics');
+
+    // Adding visual elements 
     const center = { x: this.game.world.centerX - 100, y: this.game.world.bounds.height - 200 };
     this.music = this.game.add.audio('theme');
     this.music.play();
@@ -35,12 +40,16 @@ class GameState extends State {
     overlays = this.game.add.group();
     overlays.add(this.game.add.sprite(0, 0, 'letterBox'));
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
+    lyricsText = overlays.add(this.game.add.bitmapText(4, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'nokia16', '', 16));
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
     scoreText = overlays.add(this.game.add.bitmapText(80, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
     items = new Collectables(this.game, scoreText);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
+
+    // Creating player and setting beh.
+
     player = new Player(this.game, center, 'charli');
     player.body.onCollide = new Signal();
     player.body.onCollide.add(items.resolveItemCollision, this);
@@ -51,8 +60,21 @@ class GameState extends State {
     timer.loop(1000, this.checkState, this);
     const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
-    timer.start();
 
+    // Lyrics loader
+    var lyricLineTime;
+    for (lyricLineTime in lyricsData){
+       let line = lyricsData[lyricLineTime];
+       
+       timer.add(Phaser.Timer.SECOND * parseInt(lyricLineTime), this.setLyricsText, this, line);
+    }
+
+    timer.start();
+  }
+
+  setLyricsText (line){
+    console.log(line);
+    lyricsText.text = line;
   }
 
   createBackgrounds (state) {

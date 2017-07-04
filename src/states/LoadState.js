@@ -33,6 +33,7 @@ class LoadState extends Phaser.State {
 
     this.load.audio('theme', ['assets/audio/1984.mp3']);
     this.load.json('states', 'assets/data/states.json');
+    this.load.json('lyrics', 'assets/data/lyrics.json');
 
     this.load.bitmapFont('nokia16', 'assets/fonts/nokia16.png', 'assets/fonts/nokia16.xml');
   }
