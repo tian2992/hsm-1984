@@ -2,7 +2,7 @@ const Phaser = require('Phaser');
 
 const resolution = {
   minWidth: 320,
-  minHeight: 180,
+  minHeight: 200,
   maxWidth: 960,
   maxHeight: 540
 };

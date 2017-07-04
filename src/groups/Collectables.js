@@ -42,6 +42,7 @@ class Items extends Group {
     player.score += item.score;
     player.doDamage();
     console.log('player score is now ' + player.score);
+    item.setPosition(this.game.world.width + item.width, item.height);
     item.destroy();
   }
 }

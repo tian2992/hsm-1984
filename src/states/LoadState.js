@@ -5,6 +5,7 @@ class LoadState extends Phaser.State {
     this.progressBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'progressBar');
     this.progressBar.anchor.setTo(0.5);
     this.load.setPreloadSprite(this.progressBar);
+    this.load.bitmapFont('font', 'assets/fonts/nokia16.png', 'assets/fonts/nokia16.xml');
 
     this.load.image('square', 'assets/sprites/ui/square.png');
 
@@ -17,22 +18,25 @@ class LoadState extends Phaser.State {
 
     this.load.image('letterBox', 'assets/sprites/ui/letterBox.png');
 
+    // items
+    this.load.spritesheet('coin', 'assets/sprites/items/fichagira.png', 55, 55, 4);
     // characters
     this.load.spritesheet('charli', 'assets/sprites/players/charli.png', 55, 55, 4);
     this.load.spritesheet('meza', 'assets/sprites/players/meza.png', 55, 55, 4);
     this.load.spritesheet('pancho', 'assets/sprites/players/pancho.png', 55, 55, 4);
     this.load.spritesheet('pelon', 'assets/sprites/players/pelon.png', 55, 55, 4);
 
-    this.load.image('blueGem', 'assets/sprites/items/gemBlue.png');
-    this.load.image('redGem', 'assets/sprites/items/gemRed.png');
+    // test ui
+    this.load.image('blueButton', 'assets/sprites/ui/blue_button09.png');
+    this.load.image('greenButton', 'assets/sprites/ui/green_button09.png');
+    this.load.image('yellowButton', 'assets/sprites/ui/yellow_button09.png');
 
     this.load.audio('theme', ['assets/audio/1984.mp3']);
-
     this.load.json('states', 'assets/data/states.json');
   }
 
   create () {
-    this.state.start('GameState');
+    this.state.start('TitleState');
   }
 }
 
