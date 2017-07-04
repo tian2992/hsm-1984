@@ -1,7 +1,7 @@
 import Parallaxer from 'entities/Parallaxer';
 import Player from 'entities/Player';
 import Collectables from 'groups/Collectables';
-import { State, Signal } from 'Phaser';
+import { State, Signal } from 'phaser';
 import ScreenFader from 'objects/ScreenFader';
 
 let player;

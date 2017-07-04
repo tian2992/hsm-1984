@@ -1,4 +1,4 @@
-const Phaser = require('Phaser');
+const Phaser = require('phaser');
 
 class TitleScene extends Phaser.State {
   create () {

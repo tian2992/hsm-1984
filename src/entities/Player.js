@@ -1,4 +1,4 @@
-const Phaser = require('Phaser');
+const Phaser = require('phaser');
 let spawnY;
 let gravity = 980;
 let totalJumps = 2;

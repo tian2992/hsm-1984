@@ -1,4 +1,4 @@
-const Phaser = require('Phaser');
+const Phaser = require('phaser');
 
 class Parallaxer extends Phaser.TileSprite {
   /**
