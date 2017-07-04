@@ -18,7 +18,7 @@ let worldBounds = {width: 0, height: 0};
 const logicWorldBounds = {width: 320, height: 200};
 const worldHeightDifferential = 20;
 const playerHeightDifferential = 24;
-let timerUI;
+let timerText, scoreText, playerText, areaText;
 let isDebug = false;
 
 class GameState extends State {
@@ -35,7 +35,10 @@ class GameState extends State {
     overlays = this.game.add.group();
     overlays.add(this.game.add.sprite(0, 0, 'letterBox'));
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
-    items = new Collectables(this.game);
+    timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
+    scoreText = overlays.add(this.game.add.bitmapText(80, 2, 'nokia16', '0000', 16));
+    playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
+    items = new Collectables(this.game, scoreText);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
     player = new Player(this.game, center, 'charli');
@@ -49,6 +52,7 @@ class GameState extends State {
     const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
     timer.start();
+
   }
 
   createBackgrounds (state) {
@@ -87,7 +91,7 @@ class GameState extends State {
   checkState () {
     currentTime++;
     prettyTime = this.secondstoMinutes(currentTime);
-    this.game.debug.text(prettyTime, 10, 15);
+    timerText.text = prettyTime;
 
     states.forEach((item) => {
       let state = item.state;
@@ -98,6 +102,7 @@ class GameState extends State {
         return player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
           player.swapAssets(state.player);
+          playerText.text = state.playerName;
           fader.fadeOut(500);
         });
       }

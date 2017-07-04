@@ -1,8 +1,9 @@
 [
   {
     "state": {
-      "time": "-10",
+      "time": "00:00",
       "player": "charli",
+      "playerName": "Charli",
       "bgColor": "#0BABFE",
       "backgrounds": [
         {
@@ -54,6 +55,7 @@
     "state": {
       "time": "00:19",
       "player": "meza",
+      "playerName": "Meza",
       "bgColor": "#FFFFF",
       "backgrounds": [
         {
