@@ -26,13 +26,17 @@ class LoadState extends Phaser.State {
     this.load.spritesheet('pancho', 'assets/sprites/players/pancho.png', 55, 55, 4);
     this.load.spritesheet('pelon', 'assets/sprites/players/pelon.png', 55, 55, 4);
 
-    this.load.audio('theme', ['assets/audio/1984.mp3']);
+    // test ui
+    this.load.image('blueButton', 'assets/sprites/ui/blue_button09.png');
+    this.load.image('greenButton', 'assets/sprites/ui/green_button09.png');
+    this.load.image('yellowButton', 'assets/sprites/ui/yellow_button09.png');
 
+    this.load.audio('theme', ['assets/audio/1984.mp3']);
     this.load.json('states', 'assets/data/states.json');
   }
 
   create () {
-    this.state.start('GameState');
+    this.state.start('TitleState');
   }
 }
 
