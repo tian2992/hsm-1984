@@ -23,6 +23,7 @@ class Player extends Phaser.Sprite {
     this.animations.play('walk', 8, true);
     spawnY = center.y;
     damageTween = this.game.add.tween(this).to({ alpha: 0 }, 50, Phaser.Easing.Linear.None, false, 1, 5, true);
+    this.cursors = this.game.input.keyboard.createCursorKeys();
   }
 
   bounceOutOfScene (onCompleteFn) {
@@ -61,7 +62,7 @@ class Player extends Phaser.Sprite {
       this.animations.play('walk', 8, true);
       this.jumpsLeft = totalJumps;
     }
-    if (this.game.input.activePointer.isDown && this.jumpsLeft > 0 && this.canJump) {
+    if ((this.game.input.activePointer.isDown || this.cursors.up.isDown) && this.jumpsLeft > 0 && this.canJump) {
       this.body.velocity.y = jumpHeight;
       this.jumpsLeft--;
       this.canJump = false;
