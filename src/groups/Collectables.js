@@ -5,15 +5,18 @@ const minimumTimeToSpawnItem = 2000;
 const maximumTimeToSpawnItem = 4000;
 let activeItems;
 let itemHeights = [];
+let scoreText;
+let scoreTemplate = '0000';
 
 class Items extends Group {
-  constructor (game) {
+  constructor (game, text) {
     super(game);
     this.game = game;
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
     this.maximumTimeToSpawnItem = maximumTimeToSpawnItem;
     this.itemsSpawned = 0;
     itemHeights = [game.world.height * 0.2, game.world.height * 0.35, game.world.height * 0.5];
+    scoreText = text;
   }
 
   spawnItem (timer) {
@@ -40,6 +43,8 @@ class Items extends Group {
 
   resolveItemCollision (player, item) {
     player.score += item.score;
+    let paddedNumber = scoreTemplate.substring((player.score + "").length, 4) + player.score;
+    scoreText.text = paddedNumber;
     player.doDamage();
     console.log('player score is now ' + player.score);
     item.setPosition(this.game.world.width + item.width, item.height);
