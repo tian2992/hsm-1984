@@ -31,7 +31,7 @@ class GameState extends State {
     states = this.game.cache.getJSON('states');
     lyricsData = this.game.cache.getJSON('lyrics');
 
-    // Adding visual elements 
+    // Adding visual elements
     const center = { x: this.game.world.centerX - 100, y: this.game.world.bounds.height - 200 };
     this.music = this.game.add.audio('theme');
     this.music.play();
@@ -60,19 +60,10 @@ class GameState extends State {
     timer.loop(1000, this.checkState, this);
     const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
-
-    // Lyrics loader
-    var lyricLineTime;
-    for (lyricLineTime in lyricsData){
-       let line = lyricsData[lyricLineTime];
-       
-       timer.add(Phaser.Timer.SECOND * parseInt(lyricLineTime), this.setLyricsText, this, line);
-    }
-
     timer.start();
   }
 
-  setLyricsText (line){
+  setLyricsText (line) {
     console.log(line);
     lyricsText.text = line;
   }
@@ -114,7 +105,11 @@ class GameState extends State {
     currentTime++;
     prettyTime = this.secondstoMinutes(currentTime);
     timerText.text = prettyTime;
-
+    lyricsData.forEach((lyric) => {
+      if (lyric.time === prettyTime) {
+        this.setLyricsText(lyric.data);
+      }
+    });
     states.forEach((item) => {
       let state = item.state;
       if (state.time === prettyTime) {

@@ -43,7 +43,7 @@ class Items extends Group {
 
   resolveItemCollision (player, item) {
     player.score += item.score;
-    let paddedNumber = scoreTemplate.substring((player.score + "").length, 4) + player.score;
+    let paddedNumber = scoreTemplate.substring((player.score + '').length, 4) + player.score;
     scoreText.text = paddedNumber;
     player.doDamage();
     console.log('player score is now ' + player.score);

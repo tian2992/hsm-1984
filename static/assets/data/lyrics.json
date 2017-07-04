@@ -1,6 +1,18 @@
-{
-    "5": "sing",
-    "7": "along", 
-    "10": "hello",
-    "15": "world" 
-}
+[
+    {
+		"time": "00:05",
+		"data": "hello"
+	},
+	{
+		"time": "00:07",
+		"data": "world"
+	},
+	{
+		"time": "00:10",
+		"data": "sing"
+	},
+	{
+		"time": "00:15",
+		"data": "along"
+	}
+]
