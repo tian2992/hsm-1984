@@ -1,4 +1,4 @@
-const Phaser = require('Phaser');
+const Phaser = require('phaser');
 
 class RainbowText extends Phaser.Text {
   constructor (game, x, y, text) {

@@ -1,4 +1,4 @@
-import { Sprite, Easing } from 'Phaser';
+import { Sprite, Easing } from 'phaser';
 
 class Item extends Sprite {
   constructor (game, center, asset, score, frame) {

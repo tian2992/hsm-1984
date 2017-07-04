@@ -1,4 +1,4 @@
-import { Group } from 'Phaser';
+import { Group } from 'phaser';
 import Item from '../entities/Item';
 
 const minimumTimeToSpawnItem = 2000;
