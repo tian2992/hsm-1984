@@ -106,7 +106,7 @@ class GameState extends State {
     prettyTime = this.secondstoMinutes(currentTime);
     timerText.text = prettyTime;
     lyricsData.forEach((lyric) => {
-      if (lyric.time === prettyTime) {
+      if (lyric.time.includes(prettyTime)) {
         this.setLyricsText(lyric.data);
       }
     });
