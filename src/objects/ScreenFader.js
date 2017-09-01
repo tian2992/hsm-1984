@@ -1,4 +1,4 @@
-const Phaser = require('Phaser');
+const Phaser = require('phaser');
 
 class ScreenFader extends Phaser.Sprite {
   constructor (game, center, asset, color, frame) {
