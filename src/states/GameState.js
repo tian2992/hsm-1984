@@ -35,6 +35,8 @@ class GameState extends State {
     const center = { x: this.game.world.centerX - 100, y: this.game.world.bounds.height - 200 };
     this.music = this.game.add.audio('theme');
     this.music.play();
+    this.setPauseOnVisibilityLost();
+
     backgrounds = this.game.add.group();
     entities = this.game.add.group();
     overlays = this.game.add.group();
@@ -64,6 +66,16 @@ class GameState extends State {
     const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
     timer.start();
+  }
+
+  setPauseOnVisibilityLost () {
+    this.game.onPause.add(function () {
+      this.game.sound.pauseAll();
+    }, this);
+
+    this.game.onResume.add(function () {
+      this.game.sound.resumeAll();
+    }, this);
   }
 
   setLyricsText (line) {
