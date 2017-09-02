@@ -1,18 +1,239 @@
 [
     {
-		"time": "00:05",
-		"data": "hello"
+		"time": "00:19",
+		"data": "La tierra rie al ver"
 	},
 	{
-		"time": "00:07",
-		"data": "world"
+		"time": "00:23",
+		"data": "Que la historia"
 	},
 	{
-		"time": "00:10",
-		"data": "sing"
+		"time": "00:25",
+		"data": "Se repite"
 	},
 	{
-		"time": "00:15",
-		"data": "along"
+		"time": "00:28",
+		"data": "El arte de perder"
+	},
+	{
+		"time": "00:32",
+		"data": "Despojado"
+	},
+	{
+		"time": "00:34",
+		"data": "En la selva"
+	},
+	{
+		"time": "00:37",
+		"data": "Y hoy"
+	},
+	{
+		"time": "00:39",
+		"data": "Quiero hacer valer"
+	},
+	{
+		"time": "00:43",
+		"data": "¿Que te puedo dar?"
+	},
+	{
+		"time": "00:48",
+		"data": "Para devorar"
+	},
+	{
+		"time": "00:52",
+		"data": "Cada dia mas"
+	},
+	{
+		"time": "00:54",
+		"data": ""
+	},
+	{
+		"time": "01:05",
+		"data": "El cielo se encargo"
+	},
+	{
+		"time": "01:08",
+		"data": "De las armas"
+    },
+	{
+		"time": "01:11",
+		"data": "Cerbatanas"
+	},
+	{
+		"time": "01:14",
+		"data": "El don de la guerra"
+	},
+	{
+		"time": "01:18",
+		"data": "La condena"
+	},
+	{
+		"time": "01:20",
+		"data": "Y la estafa"
+	},
+	{
+		"time": "01:23",
+		"data": "Y hoy"
+	},
+	{
+		"time": "01:24",
+		"data": "Quiero hacer valer"
+	},
+	{
+		"time": "01:27",
+		"data": "¿Que te puedo dar?"
+	},
+	{
+		"time": "01:29",
+		"data": "Para deborar"
+	},
+	{
+		"time": "01:30",
+		"data": "Y vivir"
+	},
+	{
+		"time": "01:31",
+		"data": "Cada dia mas"
+	},
+	{
+		"time": "01:33",
+		"data": "Quiero respirar"
+	},
+	{
+		"time": "01:36",
+		"data": "Volver a sanar"
+	},
+	{
+		"time": "01:42",
+		"data": "¿Que te puedo dar?"
+	},
+	{
+		"time": "01:45",
+		"data": "¿Que puede curar?"
+	},
+	{
+		"time": "01:47",
+		"data": "Sangre de mi sangre"
+	},
+	{
+		"time": "01:49",
+		"data": "En tus venas voy a estar"
+	},
+	{
+		"time": "01:50",
+		"data": "Te quiero probar"
+	},
+	{
+		"time": "01:54",
+		"data": "Para devorar"
+	},
+	{
+		"time": "01:56",
+		"data": "Carne de mi carne"
+	},
+	{
+		"time": "01:58",
+		"data": "Y vivir cada dia mas"
+	},
+	{
+		"time": "02:01",
+		"data": "¿Que te puedo dar?"
+	},
+	{
+		"time": "02:03",
+		"data": "¿Que puede curar?"
+	},
+	{
+		"time": "02:05",
+		"data": "Hueso de mis huesos"
+	},
+	{
+		"time": "02:07",
+		"data": "A tu medula llegar"
+	},
+	{
+		"time": "02:10",
+		"data": "Te quiero probar"
+	},
+	{
+		"time": "02:13",
+		"data": "Para devorar"
+    },
+	{
+		"time": "02:15",
+		"data": "La piel de mi piel"
+	},
+	{
+		"time": "02:16",
+		"data": "Y vivir cada dia mas"
+	},
+	{
+		"time": "02:18",
+		"data": ""
+	},
+	{
+		"time": "02:37",
+		"data": "¿Que te puedo dar?"
+	},
+	{
+		"time": "02:39",
+		"data": "¿Que puede curar?"
+	},
+	{
+		"time": "02:42",
+		"data": "Sangre de mi sangre"
+	},
+	{
+		"time": "02:43",
+		"data": "En tus venas voy a estar"
+	},
+	{
+		"time": "02:46",
+		"data": "Te quiero probar"
+	},
+	{
+		"time": "02:49",
+		"data": "Para devorar"
+	},
+	{
+		"time": "02:51",
+		"data": "Carne de mi carne"
+	},
+	{
+		"time": "02:53",
+		"data": "Y vivir cada dia mas"
+	},
+	{
+		"time": "02:56",
+		"data": "¿Que te puedo dar?"
+	},
+	{
+		"time": "02:58",
+		"data": "¿Que puede curar?"
+	},
+	{
+		"time": "03:00",
+		"data": "Hueso de mis huesos"
+	},
+	{
+		"time": "03:02",
+		"data": "A tu medula llegar"
+	},
+	{
+		"time": "03:05",
+		"data": "Te quiero probar"
+	},
+	{
+		"time": "03:07",
+		"data": "Para devorar"
+	},
+	{
+		"time": "03:13",
+		"data": "Uhhhhh"
+	},
+	{
+		"time": "03:15",
+		"data": ""
 	}
+
 ]
