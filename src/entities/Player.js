@@ -12,14 +12,20 @@ class Player extends Phaser.Sprite {
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
     this.body.gravity.y = gravity;
-    this.body.width = 30;
-    this.body.height = 55;
     this.game.input.mouse.capture = true;
     this.jumpsLeft = this.jumpsLeft;
     this.canJump = true;
     this.score = 0;
     this.animations.add('walk', [0, 1, 2]);
-    this.animations.add('jump', [3]);
+    if (asset === 'pug') {
+      this.body.width = 42;
+      this.body.height = 42;
+      this.animations.add('jump', [0, 1, 2]);
+    } else {
+      this.body.width = 30;
+      this.body.height = 55;
+      this.animations.add('jump', [3]);
+    }
     this.animations.play('walk', 8, true);
     spawnY = center.y;
     damageTween = this.game.add.tween(this).to({ alpha: 0 }, 50, Phaser.Easing.Linear.None, false, 1, 5, true);
@@ -48,8 +54,16 @@ class Player extends Phaser.Sprite {
   swapAssets (name) {
     this.loadTexture(name, 0);
     this.animations.add('walk', [0, 1, 2]);
-    this.animations.add('jump', [3]);
     this.animations.play('walk', 8, true);
+    if (name === 'pug') {
+      this.body.width = 42;
+      this.body.height = 42;
+      this.animations.add('jump', [0, 1, 2]);
+    } else {
+      this.body.width = 30;
+      this.body.height = 55;
+      this.animations.add('jump', [3]);
+    }
   }
 
   doDamage () {

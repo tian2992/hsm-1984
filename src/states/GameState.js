@@ -42,7 +42,7 @@ class GameState extends State {
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
     lyricsText = overlays.add(this.game.add.bitmapText(4, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'nokia16', '', 16));
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
-    scoreText = overlays.add(this.game.add.bitmapText(80, 2, 'nokia16', '0000', 16));
+    scoreText = overlays.add(this.game.add.bitmapText(130, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
     items = new Collectables(this.game, scoreText);
     this.createBackgrounds(states[0].state);

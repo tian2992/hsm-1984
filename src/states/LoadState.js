@@ -15,6 +15,17 @@ class LoadState extends Phaser.State {
     this.load.image('bgTrees', 'assets/sprites/backgrounds/Area1/bgTrees.png');
     this.load.image('fgTrees', 'assets/sprites/backgrounds/Area1/fgTrees.png');
     this.load.image('ground', 'assets/sprites/backgrounds/Area1/ground.png');
+    // for area 2
+    this.load.image('silouettes', 'assets/sprites/backgrounds/Area2/silouettes.png');
+    this.load.image('lightning', 'assets/sprites/backgrounds/Area2/lightning.png');
+    this.load.image('groundAcuatic', 'assets/sprites/backgrounds/Area2/ground.png');
+    // for area 3
+    this.load.image('volcanes', 'assets/sprites/backgrounds/Area3/volcanes.png');
+    this.load.image('volcanicbg', 'assets/sprites/backgrounds/Area3/bg.png');
+    this.load.image('volcanicGround', 'assets/sprites/backgrounds/Area3/ground.png');
+    // for area 3
+    this.load.image('stars', 'assets/sprites/backgrounds/Area4/stars.png');
+    this.load.image('planets', 'assets/sprites/backgrounds/Area4/planets.png');
 
     this.load.image('letterBox', 'assets/sprites/ui/letterBox.png');
 
@@ -25,6 +36,7 @@ class LoadState extends Phaser.State {
     this.load.spritesheet('meza', 'assets/sprites/players/meza.png', 55, 55, 4);
     this.load.spritesheet('pancho', 'assets/sprites/players/pancho.png', 55, 55, 4);
     this.load.spritesheet('pelon', 'assets/sprites/players/pelon.png', 55, 55, 4);
+    this.load.spritesheet('pug', 'assets/sprites/players/pug.png', 82, 42, 3);
 
     // test ui
     this.load.image('blueButton', 'assets/sprites/ui/blue_button09.png');

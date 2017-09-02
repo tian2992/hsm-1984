@@ -56,18 +56,10 @@
       "time": "00:19",
       "player": "meza",
       "playerName": "Meza",
-      "bgColor": "#FFFFF",
+      "bgColor": "#001FC1",
       "backgrounds": [
         {
-          "background": "mountains",
-          "useWorldHeight": true,
-          "speed": {
-            "x": -0.25,
-            "y": 0
-          }
-        },
-        {
-          "background": "bgTrees",
+          "background": "silouettes",
           "useWorldHeight": true,
           "speed": {
             "x": -1,
@@ -75,7 +67,7 @@
           }
         },
         {
-          "background": "fgTrees",
+          "background": "lightning",
           "useWorldHeight": true,
           "speed": {
             "x": -1.5,
@@ -83,10 +75,91 @@
           }
         },
         {
-          "background": "ground",
+          "background": "groundAcuatic",
           "useWorldHeight": true,
           "speed": {
             "x": -3,
+            "y": 0
+          }
+        }
+      ],
+      "items": [
+        {
+          "sprite" : "coin",
+          "score" : 300
+        },
+        {
+          "sprite" : "coin",
+          "score" : 300
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": "00:29",
+      "player": "pelon",
+      "playerName": "Pelon",
+      "bgColor": "#001FC1",
+      "backgrounds": [
+        {
+          "background": "volcanicbg",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.05,
+            "y": 0
+          }
+        },
+        {
+          "background": "volcanes",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1.5,
+            "y": 0
+          }
+        },
+        {
+          "background": "volcanicGround",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ],
+      "items": [
+        {
+          "sprite" : "coin",
+          "score" : 300
+        },
+        {
+          "sprite" : "coin",
+          "score" : 300
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": "00:39",
+      "player": "pug",
+      "playerName": "Super Pug",
+      "bgColor": "#FFFFF",
+      "itemSpawn": 50,
+      "backgrounds": [
+        {
+          "background": "stars",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.05,
+            "y": 0
+          }
+        },
+        {
+          "background": "planets",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.5,
             "y": 0
           }
         }
