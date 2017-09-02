@@ -35,12 +35,17 @@ class GameState extends State {
     const center = { x: this.game.world.centerX - 100, y: this.game.world.bounds.height - 200 };
     this.music = this.game.add.audio('theme');
     this.music.play();
+    this.setPauseOnVisibilityLost();
+
     backgrounds = this.game.add.group();
     entities = this.game.add.group();
     overlays = this.game.add.group();
     overlays.add(this.game.add.sprite(0, 0, 'letterBox'));
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
-    lyricsText = overlays.add(this.game.add.bitmapText(4, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'nokia16', '', 16));
+    this.lyrics = this.game.add.bitmapText(this.game.world.centerX, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'nokia16', '', 16);
+    this.lyrics.align = 'center';
+    this.lyrics.x = this.game.world.centerX;
+    lyricsText = overlays.add(this.lyrics);
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
     scoreText = overlays.add(this.game.add.bitmapText(80, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
@@ -61,6 +66,16 @@ class GameState extends State {
     const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
     timer.start();
+  }
+
+  setPauseOnVisibilityLost () {
+    this.game.onPause.add(function () {
+      this.game.sound.pauseAll();
+    }, this);
+
+    this.game.onResume.add(function () {
+      this.game.sound.resumeAll();
+    }, this);
   }
 
   setLyricsText (line) {
@@ -108,6 +123,8 @@ class GameState extends State {
     lyricsData.forEach((lyric) => {
       if (lyric.time === prettyTime) {
         this.setLyricsText(lyric.data);
+        this.lyrics.updateText();
+        this.lyrics.x = this.game.world.centerX - (this.lyrics.textWidth * 0.5);
       }
     });
     states.forEach((item) => {
