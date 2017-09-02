@@ -40,7 +40,10 @@ class GameState extends State {
     overlays = this.game.add.group();
     overlays.add(this.game.add.sprite(0, 0, 'letterBox'));
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
-    lyricsText = overlays.add(this.game.add.bitmapText(4, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'nokia16', '', 16));
+    this.lyrics = this.game.add.bitmapText(this.game.world.centerX, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'nokia16', '', 16);
+    this.lyrics.align = 'center';
+    this.lyrics.x = this.game.world.centerX;
+    lyricsText = overlays.add(this.lyrics);
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
     scoreText = overlays.add(this.game.add.bitmapText(80, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
@@ -108,6 +111,8 @@ class GameState extends State {
     lyricsData.forEach((lyric) => {
       if (lyric.time === prettyTime) {
         this.setLyricsText(lyric.data);
+        this.lyrics.updateText();
+        this.lyrics.x = this.game.world.centerX - (this.lyrics.textWidth * 0.5);
       }
     });
     states.forEach((item) => {
