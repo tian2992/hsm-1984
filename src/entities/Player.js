@@ -68,7 +68,7 @@ class Player extends Phaser.Sprite {
       this.canJump = false;
       this.animations.play('jump', 8, false);
     }
-    if (this.game.input.activePointer.leftButton.isUp) {
+    if (this.game.input.activePointer.isUp) {
       this.canJump = true;
     }
   }
