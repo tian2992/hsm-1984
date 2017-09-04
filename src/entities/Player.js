@@ -1,8 +1,12 @@
 const Phaser = require('phaser');
 let spawnY;
 let gravity = 980;
+let normalGravity = 980;
+let specialGravity = 150;
 let totalJumps = 2;
 let jumpHeight = -350;
+let normalJump = -350;
+let specialJump = -175;
 let damageTween;
 
 class Player extends Phaser.Sprite {
@@ -11,7 +15,6 @@ class Player extends Phaser.Sprite {
     this.game = game;
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
-    this.body.gravity.y = gravity;
     this.game.input.mouse.capture = true;
     this.jumpsLeft = this.jumpsLeft;
     this.canJump = true;
@@ -21,11 +24,16 @@ class Player extends Phaser.Sprite {
       this.body.width = 42;
       this.body.height = 42;
       this.animations.add('jump', [0, 1, 2]);
+      gravity = specialGravity;
+      jumpHeight = specialJump;
     } else {
       this.body.width = 30;
       this.body.height = 55;
       this.animations.add('jump', [3]);
+      gravity = normalGravity;
+      jumpHeight = normalJump;
     }
+    this.body.gravity.y = gravity;
     this.animations.play('walk', 8, true);
     spawnY = center.y;
     damageTween = this.game.add.tween(this).to({ alpha: 0 }, 50, Phaser.Easing.Linear.None, false, 1, 5, true);
@@ -59,10 +67,14 @@ class Player extends Phaser.Sprite {
       this.body.width = 42;
       this.body.height = 42;
       this.animations.add('jump', [0, 1, 2]);
+      gravity = specialGravity;
+      jumpHeight = specialJump;
     } else {
       this.body.width = 30;
       this.body.height = 55;
       this.animations.add('jump', [3]);
+      gravity = normalGravity;
+      jumpHeight = normalJump;
     }
   }
 
