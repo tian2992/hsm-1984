@@ -2,8 +2,8 @@
   {
     "state": {
       "time": "00:00",
-      "player": "charli",
-      "playerName": "Charli",
+      "player": "pelon",
+      "playerName": "Pelon",
       "bgColor": "#0BABFE",
       "backgrounds": [
         {
@@ -53,7 +53,7 @@
   },
   {
     "state": {
-      "time": "00:19",
+      "time": "00:54",
       "player": "meza",
       "playerName": "Meza",
       "bgColor": "#001FC1",
@@ -97,9 +97,9 @@
   },
   {
     "state": {
-      "time": "00:29",
-      "player": "pelon",
-      "playerName": "Pelon",
+      "time": "01:38",
+      "player": "charli",
+      "playerName": "Charli",
       "bgColor": "#001FC1",
       "backgrounds": [
         {
@@ -141,9 +141,9 @@
   },
   {
     "state": {
-      "time": "00:39",
+      "time": "02:16",
       "player": "pug",
-      "playerName": "Super Pug",
+      "playerName": "Vicenzzo",
       "bgColor": "#FFFFF",
       "itemSpawn": 50,
       "backgrounds": [

@@ -48,14 +48,14 @@ class GameState extends State {
     lyricsText = overlays.add(this.lyrics);
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
     scoreText = overlays.add(this.game.add.bitmapText(130, 2, 'nokia16', '0000', 16));
-    playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
+    playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Pelon', 16));
     items = new Collectables(this.game, scoreText);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
 
     // Creating player and setting beh.
 
-    player = new Player(this.game, center, 'charli');
+    player = new Player(this.game, center, 'pelon');
     player.body.onCollide = new Signal();
     player.body.onCollide.add(items.resolveItemCollision, this);
     entities.add(player);
