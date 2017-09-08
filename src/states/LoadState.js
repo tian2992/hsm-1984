@@ -1,7 +1,9 @@
 const Phaser = require('phaser');
+let assetsLoaded = false;
 
 class LoadState extends Phaser.State {
   preload () {
+    this.game.load.onLoadComplete.add(this.loadComplete, this);
     this.progressBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'progressBar');
     this.progressBar.anchor.setTo(0.5);
     this.load.setPreloadSprite(this.progressBar);
@@ -48,10 +50,18 @@ class LoadState extends Phaser.State {
     this.load.json('lyrics', 'assets/data/lyrics.json');
 
     this.load.bitmapFont('nokia16', 'assets/fonts/nokia16.png', 'assets/fonts/nokia16.xml');
+    this.game.load.start();
   }
 
-  create () {
-    this.state.start('TitleState');
+  loadComplete () {
+    console.log('Load Complete');
+    assetsLoaded = true;
+  }
+
+  update () {
+    if (this.cache.isSoundDecoded('theme') && assetsLoaded) {
+      return this.state.start('TitleState');
+    }
   }
 }
 
