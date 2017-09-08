@@ -47,7 +47,7 @@ class GameState extends State {
     this.lyrics.x = this.game.world.centerX;
     lyricsText = overlays.add(this.lyrics);
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
-    scoreText = overlays.add(this.game.add.bitmapText(80, 2, 'nokia16', '0000', 16));
+    scoreText = overlays.add(this.game.add.bitmapText(140, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Charli', 16));
     items = new Collectables(this.game, scoreText);
     this.createBackgrounds(states[0].state);
