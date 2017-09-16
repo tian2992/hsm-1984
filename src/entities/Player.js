@@ -8,6 +8,7 @@ let jumpHeight = -350;
 let normalJump = -350;
 let specialJump = -175;
 let damageTween;
+let name;
 
 class Player extends Phaser.Sprite {
   constructor (game, center, asset, frame) {
@@ -33,6 +34,7 @@ class Player extends Phaser.Sprite {
       gravity = normalGravity;
       jumpHeight = normalJump;
     }
+    this.name = asset;
     this.body.gravity.y = gravity;
     this.animations.play('walk', 8, true);
     spawnY = center.y;
@@ -76,6 +78,7 @@ class Player extends Phaser.Sprite {
       gravity = normalGravity;
       jumpHeight = normalJump;
     }
+    this.name = name;
   }
 
   doDamage () {
@@ -92,7 +95,7 @@ class Player extends Phaser.Sprite {
       this.body.velocity.y = jumpHeight;
       this.jumpsLeft--;
       this.canJump = false;
-      this.animations.play('jump', 8, false);
+      this.animations.play('jump', 8, this.name === 'pug');
     }
     if (this.game.input.activePointer.isUp) {
       this.canJump = true;
