@@ -15,16 +15,16 @@ class Items extends Group {
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
     this.maximumTimeToSpawnItem = maximumTimeToSpawnItem;
     this.itemsSpawned = 0;
-    itemHeights = [game.world.height * 0.2, game.world.height * 0.35, game.world.height * 0.5];
+    itemHeights = [game.world.height * 0.1, game.world.height * 0.35, game.world.height * 0.7];
     scoreText = text;
   }
 
   spawnItem (timer) {
     const selected = this.game.rnd.pick(activeItems);
     const initialPosition = {x: this.game.world.centerX, y: this.game.world.centerY};
-    const selectedItem = new Item(this.game, initialPosition, selected.sprite, selected.score);
+    const selectedItem = new Item(this.game, initialPosition, selected.sprite, selected.score, selected.type);
     super.add(selectedItem);
-    const randomHeight = this.game.rnd.pick(itemHeights);
+    const randomHeight = selectedItem.type === 'obstacle' ? itemHeights[2] : this.game.rnd.pick(itemHeights);
     selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
     console.log('item spawned at ' + selectedItem.position);
 
@@ -32,20 +32,22 @@ class Items extends Group {
     timer.add(timerdelay, () => { this.spawnItem(timer); }, this);
   }
 
-  createAreaItems (collectableType) {
+  createAreaItems (areaItems) {
     super.forEach((item) => {
       item.destroy();
     });
 
-    activeItems = collectableType;
-    console.log(collectableType);
+    activeItems = areaItems;
+    console.log(areaItems);
   }
 
   resolveItemCollision (player, item) {
     player.score += item.score;
     let paddedNumber = scoreTemplate.substring((player.score + '').length, 4) + player.score;
     scoreText.text = paddedNumber;
-    player.doDamage();
+    if (item.type === 'obstacle') {
+      player.doDamage();
+    }
     console.log('player score is now ' + player.score);
     item.setPosition(this.game.world.width + item.width, item.height);
     item.destroy();

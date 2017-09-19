@@ -42,11 +42,23 @@
       "items": [
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
         },
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
         }
       ]
     }
@@ -86,11 +98,23 @@
       "items": [
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
         },
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
         }
       ]
     }
@@ -130,11 +154,23 @@
       "items": [
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
         },
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
         }
       ]
     }
@@ -167,11 +203,23 @@
       "items": [
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
         },
         {
           "sprite" : "coin",
-          "score" : 300
+          "score" : 300,
+          "type": "collectable"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
+        },
+        {
+          "sprite" : "blueButton",
+          "score" : -100,
+          "type": "obstacle"
         }
       ]
     }
