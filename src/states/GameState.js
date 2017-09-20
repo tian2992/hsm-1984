@@ -63,8 +63,7 @@ class GameState extends State {
     currentTime = 0;
     timer = this.game.time.create(false);
     timer.loop(1000, this.checkState, this);
-    const timerdelay = this.game.rnd.between(items.minimumTimeToSpawnItem, items.maximumTimeToSpawnItem);
-    timer.add(timerdelay, () => { items.spawnItem(timer); }, items);
+    timer.add(1000, () => { items.spawnItem(timer); }, items);
     timer.start();
   }
 
