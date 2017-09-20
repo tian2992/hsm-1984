@@ -23,7 +23,7 @@ class Item extends Sprite {
   }
 
   update () {
-    this.position.x -= 2.5;
+    this.position.x -= 3;
   }
 }
 
