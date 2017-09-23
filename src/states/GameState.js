@@ -1,13 +1,14 @@
 import Parallaxer from 'entities/Parallaxer';
 import Player from 'entities/Player';
 import Collectables from 'groups/Collectables';
-import { State, Signal } from 'phaser';
+import { State, Signal, Keyboard } from 'phaser';
 import ScreenFader from 'objects/ScreenFader';
 
 let player;
 let timer;
 let currentTime;
 let states;
+let currentStage = 0;
 let fader;
 let prettyTime;
 let backgrounds;
@@ -17,11 +18,13 @@ let overlays;
 let worldBounds = {width: 0, height: 0};
 let lyricsText;
 let lyricsData;
+let skipKey;
 const logicWorldBounds = {width: 320, height: 200};
 const worldHeightDifferential = 20;
 const playerHeightDifferential = 24;
-let timerText, scoreText, playerText, areaText;
+let timerText, scoreText, playerText;
 let isDebug = false;
+let skipToNext = false;
 
 class GameState extends State {
   create () {
@@ -30,6 +33,10 @@ class GameState extends State {
     this.game.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     states = this.game.cache.getJSON('states');
     lyricsData = this.game.cache.getJSON('lyrics');
+    if (isDebug) {
+      skipKey = this.game.input.keyboard.addKey(Keyboard.S);
+      skipKey.onDown.add(() => { skipToNext = true; }, this);
+    }
 
     // Adding visual elements
     const center = { x: this.game.world.centerX - 100, y: this.game.world.bounds.height - 200 };
@@ -78,7 +85,6 @@ class GameState extends State {
   }
 
   setLyricsText (line) {
-    console.log(line);
     lyricsText.text = line;
   }
 
@@ -126,18 +132,24 @@ class GameState extends State {
         this.lyrics.x = this.game.world.centerX - (this.lyrics.textWidth * 0.5);
       }
     });
-    states.forEach((item) => {
+    states.some((item, index, states) => {
       let state = item.state;
+      if (isDebug && skipToNext && currentStage + 1 < states.length) {
+        state = states[currentStage + 1].state;
+        prettyTime = state.time;
+        skipToNext = false;
+      }
       if (state.time === prettyTime) {
-        console.log(`doing state change! ${state.time}   ${currentTime}`);
+        currentStage++;
         items.createAreaItems(state.items);
         fader.fadeIn(800);
-        return player.bounceOutOfScene(() => {
+        player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
           player.swapAssets(state.player);
           playerText.text = state.playerName;
           fader.fadeOut(500);
         });
+        return true;
       }
     });
   }

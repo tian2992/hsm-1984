@@ -6,10 +6,13 @@ class Item extends Sprite {
     this.game = game;
     this.game.stage.addChild(this);
     this.game.physics.arcade.enable(this);
-    this.body.width = 30;
-    this.body.height = 30;
     this.score = score;
     this.type = type;
+    if (this.type !== 'obstacle') {
+      this.body.setSize(30, 30, 5, 20);
+    } else {
+      this.body.setSize(24, 24, 5, 30);
+    }
     this.animations.add('idle', [0, 1, 2, 3]);
     this.animations.play('idle', 8, true);
   }

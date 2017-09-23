@@ -51,12 +51,12 @@
           "type": "collectable"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "rock",
           "score" : -100,
           "type": "obstacle"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "rock",
           "score" : -100,
           "type": "obstacle"
         }
@@ -107,12 +107,12 @@
           "type": "collectable"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "rock",
           "score" : -100,
           "type": "obstacle"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "rock",
           "score" : -100,
           "type": "obstacle"
         }
@@ -163,12 +163,12 @@
           "type": "collectable"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "rock",
           "score" : -100,
           "type": "obstacle"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "rock",
           "score" : -100,
           "type": "obstacle"
         }
