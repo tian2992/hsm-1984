@@ -42,6 +42,9 @@ class Items extends Group {
 
   resolveItemCollision (player, item) {
     player.score += item.score;
+    if (player.score < 0) {
+      player.score = 0;
+    }
     let paddedNumber = scoreTemplate.substring((player.score + '').length, 4) + player.score;
     scoreText.text = paddedNumber;
     if (item.type === 'obstacle') {

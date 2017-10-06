@@ -10,11 +10,13 @@ class Item extends Sprite {
     this.type = type;
     if (this.type !== 'obstacle') {
       this.body.setSize(30, 30, 5, 20);
+      this.animations.add('idle', [0, 1, 2, 3]);
+      this.animations.play('idle', 8, true);
     } else {
       this.body.setSize(24, 24, 5, 30);
+      this.animations.add('idle', [0, 1]);
+      this.animations.play('idle', 4, true);
     }
-    this.animations.add('idle', [0, 1, 2, 3]);
-    this.animations.play('idle', 8, true);
   }
 
   setPosition (x, y) {

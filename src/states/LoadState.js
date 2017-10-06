@@ -17,17 +17,26 @@ class LoadState extends Phaser.State {
     this.load.image('bgTrees', 'assets/sprites/backgrounds/Area1/bgTrees.png');
     this.load.image('fgTrees', 'assets/sprites/backgrounds/Area1/fgTrees.png');
     this.load.image('ground', 'assets/sprites/backgrounds/Area1/ground.png');
+    this.load.spritesheet('stage1_obstacle1', 'assets/sprites/items/Obstacles/Area1/Piedra Stage1.png', 55, 55, 2);
+    this.load.spritesheet('stage1_obstacle2', 'assets/sprites/items/Obstacles/Area1/sonic Stage1.png', 55, 55, 2);
     // for area 2
     this.load.image('silouettes', 'assets/sprites/backgrounds/Area2/silouettes.png');
     this.load.image('lightning', 'assets/sprites/backgrounds/Area2/lightning.png');
     this.load.image('groundAcuatic', 'assets/sprites/backgrounds/Area2/ground.png');
+    this.load.spritesheet('stage2_obstacle1', 'assets/sprites/items/Obstacles/Area2/Medusa Stage2.png', 55, 55, 2);
+    this.load.spritesheet('stage2_obstacle2', 'assets/sprites/items/Obstacles/Area2/Pescado Stage2.png', 55, 55, 2);
     // for area 3
     this.load.image('volcanes', 'assets/sprites/backgrounds/Area3/volcanes.png');
     this.load.image('volcanicbg', 'assets/sprites/backgrounds/Area3/bg.png');
     this.load.image('volcanicGround', 'assets/sprites/backgrounds/Area3/ground.png');
-    // for area 3
+    this.load.spritesheet('stage3_obstacle1', 'assets/sprites/items/Obstacles/Area3/Piedra Stage3.png', 55, 55, 2);
+    this.load.spritesheet('stage3_obstacle2', 'assets/sprites/items/Obstacles/Area3/redsonic Stage3.png', 55, 55, 2);
+    // for area 4
     this.load.image('stars', 'assets/sprites/backgrounds/Area4/stars.png');
     this.load.image('planets', 'assets/sprites/backgrounds/Area4/planets.png');
+    this.load.spritesheet('stage4_obstacle1', 'assets/sprites/items/Obstacles/Area4/Piedra Stage4.png', 55, 55, 2);
+    // for area 5
+    this.load.spritesheet('stage5_obstacle1', 'assets/sprites/items/Obstacles/Area5/popito Stage5.png', 55, 55, 2);
 
     this.load.image('letterBox', 'assets/sprites/ui/letterBox.png');
 
