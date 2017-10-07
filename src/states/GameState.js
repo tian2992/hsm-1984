@@ -141,8 +141,15 @@ class GameState extends State {
       }
       if (state.time === prettyTime) {
         currentStage++;
-        items.createAreaItems(state.items);
+        if (state.type === 'ending') {
+          fader.fadeIn(800);
+          return player.bounceOutOfScene(() => {
+            this.game.stage.removeChild(fader);
+            return this.state.start('EndingState');
+          });
+        }
         fader.fadeIn(800);
+        items.createAreaItems(state.items);
         player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
           player.swapAssets(state.player);
