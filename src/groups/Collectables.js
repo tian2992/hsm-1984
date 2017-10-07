@@ -15,7 +15,7 @@ class Items extends Group {
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
     this.maximumTimeToSpawnItem = maximumTimeToSpawnItem;
     this.itemsSpawned = 0;
-    itemHeights = [game.world.height * 0.1, game.world.height * 0.35, game.world.height * 0.67];
+    itemHeights = [game.world.height * 0.02, game.world.height * 0.30, game.world.height * 0.67];
     scoreText = text;
   }
 
