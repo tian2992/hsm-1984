@@ -15,7 +15,7 @@ class Items extends Group {
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
     this.maximumTimeToSpawnItem = maximumTimeToSpawnItem;
     this.itemsSpawned = 0;
-    itemHeights = [game.world.height * 0.1, game.world.height * 0.35, game.world.height * 0.7];
+    itemHeights = [game.world.height * 0.1, game.world.height * 0.35, game.world.height * 0.67];
     scoreText = text;
   }
 
@@ -26,7 +26,6 @@ class Items extends Group {
     super.add(selectedItem);
     const randomHeight = selectedItem.type === 'obstacle' ? itemHeights[2] : this.game.rnd.pick(itemHeights);
     selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
-    console.log('item spawned at ' + selectedItem.position);
 
     const timerdelay = this.game.rnd.between(minimumTimeToSpawnItem, maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { this.spawnItem(timer); }, this);
@@ -43,6 +42,9 @@ class Items extends Group {
 
   resolveItemCollision (player, item) {
     player.score += item.score;
+    if (player.score < 0) {
+      player.score = 0;
+    }
     let paddedNumber = scoreTemplate.substring((player.score + '').length, 4) + player.score;
     scoreText.text = paddedNumber;
     if (item.type === 'obstacle') {

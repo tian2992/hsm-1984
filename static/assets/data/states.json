@@ -5,6 +5,7 @@
       "player": "pelon",
       "playerName": "Pelon",
       "bgColor": "#0BABFE",
+      "type": "stage",
       "backgrounds": [
         {
           "background": "mountains",
@@ -51,12 +52,12 @@
           "type": "collectable"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "stage1_obstacle1",
           "score" : -100,
           "type": "obstacle"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "stage1_obstacle2",
           "score" : -100,
           "type": "obstacle"
         }
@@ -69,6 +70,7 @@
       "player": "meza",
       "playerName": "Meza",
       "bgColor": "#001FC1",
+      "type": "stage",
       "backgrounds": [
         {
           "background": "silouettes",
@@ -107,12 +109,12 @@
           "type": "collectable"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "stage2_obstacle1",
           "score" : -100,
           "type": "obstacle"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "stage2_obstacle2",
           "score" : -100,
           "type": "obstacle"
         }
@@ -125,6 +127,7 @@
       "player": "charli",
       "playerName": "Charli",
       "bgColor": "#001FC1",
+      "type": "stage",
       "backgrounds": [
         {
           "background": "volcanicbg",
@@ -163,12 +166,12 @@
           "type": "collectable"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "stage3_obstacle1",
           "score" : -100,
           "type": "obstacle"
         },
         {
-          "sprite" : "blueButton",
+          "sprite" : "stage3_obstacle2",
           "score" : -100,
           "type": "obstacle"
         }
@@ -182,6 +185,7 @@
       "playerName": "Vicenzzo",
       "bgColor": "#FFFFF",
       "itemSpawn": 50,
+      "type": "stage",
       "backgrounds": [
         {
           "background": "stars",
@@ -212,6 +216,83 @@
           "type": "collectable"
         }
       ]
+    }
+  },
+  {
+    "state": {
+      "time": "02:34",
+      "player": "charli",
+      "playerName": "Charli",
+      "bgColor": "#FFFFF",
+      "itemSpawn": 50,
+      "type": "stage",
+      "backgrounds": [
+        {
+          "background": "fondo",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.05,
+            "y": 0
+          }
+        },
+        {
+          "background": "edificios2",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -0.5,
+            "y": 0
+          }
+        },
+        {
+          "background": "edificios",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -1.5,
+            "y": 0
+          }
+        },
+        {
+          "background": "calle",
+          "useWorldHeight": true,
+          "speed": {
+            "x": -3,
+            "y": 0
+          }
+        }
+      ],
+      "items": [
+        {
+          "sprite" : "coin",
+          "score" : 300,
+          "type": "collectable"
+        },
+        {
+          "sprite" : "coin",
+          "score" : 300,
+          "type": "collectable"
+        },
+        {
+          "sprite" : "stage5_obstacle1",
+          "score" : -100,
+          "type": "obstacle"
+        },
+        {
+          "sprite" : "stage5_obstacle1",
+          "score" : -100,
+          "type": "obstacle"
+        },
+        {
+          "sprite" : "stage5_obstacle1",
+          "score" : -100,
+          "type": "obstacle"
+        }
+      ]
+    }
+  },
+  {
+    "state": {
+      "time": "03:14",
+      "type": "ending"
     }
   }
 ]

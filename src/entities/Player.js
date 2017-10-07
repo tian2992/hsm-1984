@@ -49,7 +49,6 @@ class Player extends Phaser.Sprite {
     tween.to({y: -this.game.world.height}, 2000, Phaser.Easing.Bounce.Out);
     tween.onComplete.add(() => {
       onCompleteFn();
-      console.log(spawnY);
       const falltween = this.game.add.tween(this);
       falltween.to({y: spawnY}, 1000, Phaser.Easing.Bounce.In);
       falltween.onComplete.add(() => {

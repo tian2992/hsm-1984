@@ -1,13 +1,25 @@
 const Phaser = require('phaser');
 
+let backgrounds;
+let logo;
+let button;
+const logicWorldBounds = {width: 320, height: 200};
+
 class TitleScene extends Phaser.State {
   create () {
-    const horizontalPosition = (this.game.world.width / 2) - this.game.cache.getImage('greenButton').width / 2;
-    this.playButton = this.add.button(horizontalPosition, this.game.world.height / 2, 'greenButton', this.startGame, this);
+    button = this.game.add.sprite(logicWorldBounds.width / 2 - 40, logicWorldBounds.height - this.game.cache.getImage('boton').height, 'boton');
+    button.animations.add('idle', [0, 1]);
+    button.animations.play('idle', 2, true);
+    backgrounds = this.game.add.group();
+    logo = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('logo').height, 'logo');
+    backgrounds.add(logo);
+    backgrounds.add(button);
   }
 
-  startGame () {
-    this.state.start('GameState');
+  update () {
+    if ((this.game.input.activePointer.isDown)) {
+      this.state.start('GameState');
+    }
   }
 }
 

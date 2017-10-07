@@ -2,6 +2,7 @@ import BootState from 'states/BootState';
 import LoadState from 'states/LoadState';
 import GameState from 'states/GameState';
 import TitleState from 'states/TitleState';
+import EndingState from 'states/EndingState';
 
 const Phaser = require('phaser');
 
@@ -15,6 +16,7 @@ class Game extends Phaser.Game {
     state.add('LoadState', LoadState);
     state.add('GameState', GameState);
     state.add('TitleState', TitleState);
+    state.add('EndingState', EndingState);
     state.start('BootState');
   }
 }
