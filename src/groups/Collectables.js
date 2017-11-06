@@ -1,15 +1,12 @@
 import { Group } from 'phaser';
 import Item from '../entities/Item';
 
-const minimumTimeToSpawnItem = 1000;
-const maximumTimeToSpawnItem = 2000;
-let activeItems;
 let itemHeights = [];
 let scoreText;
 let scoreTemplate = '0000';
 
 class Items extends Group {
-  constructor (game, text) {
+  constructor (game, text, minimumTimeToSpawnItem, maximumTimeToSpawnItem) {
     super(game);
     this.game = game;
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
@@ -20,14 +17,16 @@ class Items extends Group {
   }
 
   spawnItem (timer) {
-    const selected = this.game.rnd.pick(activeItems);
-    const initialPosition = {x: this.game.world.centerX, y: this.game.world.centerY};
-    const selectedItem = new Item(this.game, initialPosition, selected.sprite, selected.score, selected.type);
-    super.add(selectedItem);
-    const randomHeight = selectedItem.type === 'obstacle' ? itemHeights[2] : this.game.rnd.pick(itemHeights);
-    selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
+    if (typeof this.activeItems !== 'undefined') {
+      const selected = this.game.rnd.pick(this.activeItems);
+      const initialPosition = {x: this.game.world.centerX, y: this.game.world.centerY};
+      const selectedItem = new Item(this.game, initialPosition, selected.sprite, selected.score, selected.type);
+      super.add(selectedItem);
+      const randomHeight = selectedItem.type === 'obstacle' ? itemHeights[2] : this.game.rnd.pick(itemHeights.slice(0, 2));
+      selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
+    }
 
-    const timerdelay = this.game.rnd.between(minimumTimeToSpawnItem, maximumTimeToSpawnItem);
+    const timerdelay = this.game.rnd.between(this.minimumTimeToSpawnItem, this.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { this.spawnItem(timer); }, this);
   }
 
@@ -36,8 +35,7 @@ class Items extends Group {
       item.destroy();
     });
 
-    activeItems = areaItems;
-    console.log(areaItems);
+    this.activeItems = areaItems;
   }
 
   resolveItemCollision (player, item) {
@@ -50,7 +48,6 @@ class Items extends Group {
     if (item.type === 'obstacle') {
       player.doDamage();
     }
-    console.log('player score is now ' + player.score);
     item.setPosition(this.game.world.width + item.width, item.height);
     item.destroy();
   }
