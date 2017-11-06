@@ -1,8 +1,8 @@
 import { Group } from 'phaser';
 import Item from '../entities/Item';
 
-const minimumTimeToSpawnItem = 2000;
-const maximumTimeToSpawnItem = 4000;
+const minimumTimeToSpawnItem = 1000;
+const maximumTimeToSpawnItem = 2000;
 let activeItems;
 let itemHeights = [];
 let scoreText;
