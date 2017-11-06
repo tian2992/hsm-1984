@@ -73,6 +73,8 @@ class EndingScene extends Phaser.State {
   }
 
   restartGame () {
+    overlays.remove(scoreText);
+    scoreText.destroy();
     this.state.start('GameState');
   }
 
