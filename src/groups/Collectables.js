@@ -17,12 +17,14 @@ class Items extends Group {
   }
 
   spawnItem (timer) {
-    const selected = this.game.rnd.pick(this.activeItems);
-    const initialPosition = {x: this.game.world.centerX, y: this.game.world.centerY};
-    const selectedItem = new Item(this.game, initialPosition, selected.sprite, selected.score, selected.type);
-    super.add(selectedItem);
-    const randomHeight = selectedItem.type === 'obstacle' ? itemHeights[2] : this.game.rnd.pick(itemHeights);
-    selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
+    if (typeof this.activeItems !== 'undefined') {
+      const selected = this.game.rnd.pick(this.activeItems);
+      const initialPosition = {x: this.game.world.centerX, y: this.game.world.centerY};
+      const selectedItem = new Item(this.game, initialPosition, selected.sprite, selected.score, selected.type);
+      super.add(selectedItem);
+      const randomHeight = selectedItem.type === 'obstacle' ? itemHeights[2] : this.game.rnd.pick(itemHeights.slice(0, 2));
+      selectedItem.setPosition(this.game.world.width + selectedItem.width, randomHeight);
+    }
 
     const timerdelay = this.game.rnd.between(this.minimumTimeToSpawnItem, this.maximumTimeToSpawnItem);
     timer.add(timerdelay, () => { this.spawnItem(timer); }, this);

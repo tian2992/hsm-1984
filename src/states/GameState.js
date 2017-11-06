@@ -150,7 +150,7 @@ class GameState extends State {
           fader.fadeIn(800);
           return player.bounceOutOfScene(() => {
             this.game.stage.removeChild(fader);
-            return this.state.start('EndingState');
+            return this.state.start('EndingState', true, false, player.score);
           });
         }
         fader.fadeIn(800);
