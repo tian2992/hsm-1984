@@ -65,11 +65,13 @@ class LoadState extends Phaser.State {
     this.load.image('mesa1', 'assets/sprites/backgrounds/Bar/mesa1.png');
     this.load.image('charli1', 'assets/sprites/backgrounds/Bar/chali1.png');
     this.load.image('pug1', 'assets/sprites/backgrounds/Bar/pug1.png');
+    this.load.spritesheet('restart', 'assets/sprites/ui/boton_restart.png', 46, 23, 2);
+    this.load.spritesheet('fb', 'assets/sprites/ui/facebook.png', 26, 28, 2);
+    this.load.spritesheet('insta', 'assets/sprites/ui/insta.png', 26, 28, 2);
+    this.load.spritesheet('tw', 'assets/sprites/ui/twiter.png', 26, 28, 2);
 
     // test ui
-    this.load.image('blueButton', 'assets/sprites/ui/blue_button09.png');
     this.load.spritesheet('boton', 'assets/sprites/ui/boton.png', 79, 25, 2);
-    this.load.image('yellowButton', 'assets/sprites/ui/yellow_button09.png');
 
     this.load.audio('theme', ['assets/audio/1984.mp3']);
     this.load.json('states', 'assets/data/states.json');

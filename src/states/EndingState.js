@@ -5,6 +5,7 @@ let entities;
 let overlays;
 let timer;
 let charli, mesa, pelon, pug, light, bgLights, logo, gente1, gente2;
+let restart, fb, tw, insta;
 const logicWorldBounds = {width: 320, height: 200};
 let currentLight = 'Bglight1';
 
@@ -33,7 +34,15 @@ class EndingScene extends Phaser.State {
     gente2 = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('people2').height, 'people2');
     entities.add(gente2);
 
+    restart = this.game.add.button(0, logicWorldBounds.height - this.game.cache.getImage('restart').height, 'restart', this.restartGame, this, 2, 1, 0);
+    fb = this.game.add.button(logicWorldBounds.width - 26 * 3, logicWorldBounds.height - this.game.cache.getImage('fb').height - 2, 'fb', this.facebook, this, 2, 1, 0);
+    tw = this.game.add.button(logicWorldBounds.width - 26 * 2, logicWorldBounds.height - this.game.cache.getImage('tw').height - 2, 'tw', this.twitter, this, 2, 1, 0);
+    insta = this.game.add.button(logicWorldBounds.width - 26, logicWorldBounds.height - this.game.cache.getImage('insta').height - 2, 'insta', this.instagram, this, 2, 1, 0);
+
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
+    overlays.add(restart);
+    overlays.add(fb);
+    overlays.add(insta);
     this.game.add.tween(charli.position).to({x: charli.position.x + 2}, 500, Phaser.Easing.Back.InOut, true, 500, 2, true).loop(true);
     this.game.add.tween(mesa.position).to({x: mesa.position.x - 2}, 500, Phaser.Easing.Back.InOut, true, 500, 5, true).loop(true);
     this.game.add.tween(pelon.position).to({y: mesa.position.y - 2}, 500, Phaser.Easing.Back.InOut, true, 500, 10, true).loop(true);
@@ -52,6 +61,22 @@ class EndingScene extends Phaser.State {
 
   startGame () {
     this.state.start('TitleState');
+  }
+
+  restartGame () {
+    this.state.start('GameState');
+  }
+
+  twitter () {
+    window.open('https://twitter.com/hot_sugar_mama', '_blank', this);
+  }
+
+  facebook () {
+    window.open('https://www.facebook.com/hotsugarmama', '_blank', this);
+  }
+
+  instagram () {
+    window.open('https://www.instagram.com/hotsugarmama', '_blank', this);
   }
 }
 
