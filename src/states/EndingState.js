@@ -1,6 +1,6 @@
-const Phaser = require('phaser');
-const RainbowText = require('../objects/RainbowText');
+import RainbowText from 'objects/RainbowText';
 
+const Phaser = require('phaser');
 let backgrounds;
 let entities;
 let overlays;
@@ -40,10 +40,8 @@ class EndingScene extends Phaser.State {
     gente2 = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('people2').height, 'people2');
     entities.add(gente2);
 
-    // scoreText = overlays.add(this.game.add.bitmapText(120, logicWorldBounds.height - 16 - 2, 'nokia16', '0000', 16));
-    scoreText = new RainbowText(this.game, 120, logicWorldBounds.height - 16 - 2, 'Score: ' + this.finalScore + '!');
+    scoreText = new RainbowText(this.game, 160, logicWorldBounds.height - 6, `SCORE: ${this.finalScore || '0000'}`);
     scoreText.anchor.set(0.5);
-    // scoreText.text = 'Score: ' + this.finalScore + '!';
     restart = this.game.add.button(0, logicWorldBounds.height - this.game.cache.getImage('restart').height, 'restart', this.restartGame, this, 2, 1, 0);
     fb = this.game.add.button(logicWorldBounds.width - 26 * 3, logicWorldBounds.height - this.game.cache.getImage('fb').height - 2, 'fb', this.facebook, this, 2, 1, 0);
     tw = this.game.add.button(logicWorldBounds.width - 26 * 2, logicWorldBounds.height - this.game.cache.getImage('tw').height - 2, 'tw', this.twitter, this, 2, 1, 0);
@@ -52,6 +50,7 @@ class EndingScene extends Phaser.State {
     overlays.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('letterBox').height, 'letterBox'));
     overlays.add(restart);
     overlays.add(fb);
+    overlays.add(tw);
     overlays.add(insta);
     this.game.add.tween(charli.position).to({x: charli.position.x + 2}, 500, Phaser.Easing.Back.InOut, true, 500, 2, true).loop(true);
     this.game.add.tween(mesa.position).to({x: mesa.position.x - 2}, 500, Phaser.Easing.Back.InOut, true, 500, 5, true).loop(true);
