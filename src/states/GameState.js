@@ -14,6 +14,7 @@ let prettyTime;
 let backgrounds;
 let entities;
 let items;
+let obstacles;
 let overlays;
 let worldBounds = {width: 0, height: 0};
 let lyricsText;
@@ -56,21 +57,24 @@ class GameState extends State {
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
     scoreText = overlays.add(this.game.add.bitmapText(130, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Pelon', 16));
-    items = new Collectables(this.game, scoreText);
+    items = new Collectables(this.game, scoreText, 1000, 2000);
+    obstacles = new Collectables(this.game, scoreText, 6000, 10000);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
-
+    obstacles.createAreaItems(states[0].state.obstacles);
     // Creating player and setting beh.
 
     player = new Player(this.game, center, 'pelon');
     player.body.onCollide = new Signal();
     player.body.onCollide.add(items.resolveItemCollision, this);
+    player.body.onCollide.add(obstacles.resolveItemCollision, this);
     entities.add(player);
     fader = new ScreenFader(this.game, {x: 0, y: 0}, 'progressBar', '#F0000');
     currentTime = 0;
     timer = this.game.time.create(false);
     timer.loop(1000, this.checkState, this);
     timer.add(1000, () => { items.spawnItem(timer); }, items);
+    timer.add(2300, () => { obstacles.spawnItem(timer); }, obstacles);
     timer.start();
   }
 
@@ -103,6 +107,7 @@ class GameState extends State {
 
   update () {
     this.game.physics.arcade.collide(player, items);
+    this.game.physics.arcade.collide(player, obstacles);
   }
 
   render () {
@@ -150,6 +155,7 @@ class GameState extends State {
         }
         fader.fadeIn(800);
         items.createAreaItems(state.items);
+        obstacles.createAreaItems(state.obstacles);
         player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
           player.swapAssets(state.player);

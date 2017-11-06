@@ -50,7 +50,9 @@
           "sprite" : "coin",
           "score" : 300,
           "type": "collectable"
-        },
+        }
+      ],
+      "obstacles": [
         {
           "sprite" : "stage1_obstacle1",
           "score" : -100,
@@ -107,7 +109,9 @@
           "sprite" : "coin",
           "score" : 300,
           "type": "collectable"
-        },
+        }
+      ],
+      "obstacles": [
         {
           "sprite" : "stage2_obstacle1",
           "score" : -100,
@@ -164,7 +168,10 @@
           "sprite" : "coin",
           "score" : 300,
           "type": "collectable"
-        },
+        }
+      ],
+      "obstacles":
+      [
         {
           "sprite" : "stage3_obstacle1",
           "score" : -100,
@@ -270,7 +277,9 @@
           "sprite" : "coin",
           "score" : 300,
           "type": "collectable"
-        },
+        }
+      ],
+      "obstacles": [
         {
           "sprite" : "stage5_obstacle1",
           "score" : -100,
