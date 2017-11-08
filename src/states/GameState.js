@@ -58,7 +58,7 @@ class GameState extends State {
     scoreText = overlays.add(this.game.add.bitmapText(130, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Pelon', 16));
     items = new Collectables(this.game, scoreText, 1000, 2000);
-    obstacles = new Collectables(this.game, scoreText, 6000, 10000);
+    obstacles = new Collectables(this.game, scoreText, 2000, 6000);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
     obstacles.createAreaItems(states[0].state.obstacles);
