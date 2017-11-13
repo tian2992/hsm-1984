@@ -24,7 +24,7 @@ const logicWorldBounds = {width: 320, height: 200};
 const worldHeightDifferential = 20;
 const playerHeightDifferential = 24;
 let timerText, scoreText, playerText;
-let isDebug = true;
+let isDebug = false;
 let skipToNext = false;
 
 class GameState extends State {
