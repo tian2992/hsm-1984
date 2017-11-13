@@ -27,14 +27,11 @@ class Items extends Group {
     }
 
     const timerdelay = this.game.rnd.between(this.minimumTimeToSpawnItem, this.maximumTimeToSpawnItem);
-    timer.add(timerdelay, () => { this.spawnItem(timer); }, this);
+    timer.add(timerdelay, () => { this.spawnItem(timer); }, this.game);
   }
 
   createAreaItems (areaItems) {
-    super.forEach((item) => {
-      item.destroy();
-    });
-
+    super.removeAll(true);
     this.activeItems = areaItems;
   }
 

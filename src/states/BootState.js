@@ -19,6 +19,7 @@ class BootState extends Phaser.State {
     this.game.scale.setMinMax(resolution.minWidth, resolution.minHeight, resolution.maxWidth, resolution.maxHeight);
     this.game.stage.smoothed = false;
     this.game.scale.refresh();
+    this.game.rnd.sow([Math.random()]);
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.state.start('LoadState');
   }
