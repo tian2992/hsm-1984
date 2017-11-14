@@ -49,7 +49,7 @@ class LoadState extends Phaser.State {
     this.load.spritesheet('rock', 'assets/sprites/items/S1piedra.png', 50, 55, 3);
     // characters
     this.load.spritesheet('charli', 'assets/sprites/players/charli.png', 55, 55, 4);
-    this.load.spritesheet('meza', 'assets/sprites/players/meza.png', 55, 55, 4);
+    this.load.spritesheet('meza', 'assets/sprites/players/mezaswim.png', 55, 55, 3);
     this.load.spritesheet('pelon', 'assets/sprites/players/pelon.png', 55, 55, 4);
     this.load.spritesheet('pug', 'assets/sprites/players/pug.png', 82, 42, 3);
     // ending/ title state?

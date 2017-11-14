@@ -121,6 +121,7 @@ class GameState extends State {
       items.forEach((item) => {
         this.game.debug.body(item, 'blue', false);
       });
+      this.game.debug.body(player, 'blue', false);      
     }
   }
 

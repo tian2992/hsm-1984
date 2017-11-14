@@ -8,7 +8,6 @@ let jumpHeight = -350;
 let normalJump = -350;
 let specialJump = -175;
 let damageTween;
-let name;
 
 class Player extends Phaser.Sprite {
   constructor (game, center, asset, frame) {
@@ -24,6 +23,12 @@ class Player extends Phaser.Sprite {
     if (asset === 'pug') {
       this.body.width = 42;
       this.body.height = 42;
+      this.animations.add('jump', [0, 1, 2]);
+      gravity = specialGravity;
+      jumpHeight = specialJump;
+    } else if (asset === 'meza') {
+      this.body.width = 30;
+      this.body.height = 55;
       this.animations.add('jump', [0, 1, 2]);
       gravity = specialGravity;
       jumpHeight = specialJump;
@@ -67,6 +72,12 @@ class Player extends Phaser.Sprite {
     if (name === 'pug') {
       this.body.width = 42;
       this.body.height = 42;
+      this.animations.add('jump', [0, 1, 2]);
+      gravity = specialGravity;
+      jumpHeight = specialJump;
+    } else if (name === 'meza') {
+      this.body.width = 30;
+      this.body.height = 60;
       this.animations.add('jump', [0, 1, 2]);
       gravity = specialGravity;
       jumpHeight = specialJump;
