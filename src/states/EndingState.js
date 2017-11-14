@@ -28,7 +28,7 @@ class EndingScene extends Phaser.State {
     logo = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('logo').height, 'logo');
     backgrounds.add(logo);
     backgrounds.add(this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('scenary').height, 'scenary'));
-    light = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('light').height, 'light');
+    light = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('light').height * 0.85, 'light');
     entities.add(light);
     pelon = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('pelon1').height, 'pelon1');
     entities.add(pelon);
