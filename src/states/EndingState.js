@@ -1,4 +1,4 @@
-import RainbowText from 'objects/RainbowText';
+import ScreenFader from '../objects/ScreenFader';
 
 const Phaser = require('phaser');
 let backgrounds;
@@ -12,8 +12,11 @@ const logicWorldBounds = {width: 320, height: 200};
 let currentLight = 'Bglight1';
 
 class EndingScene extends Phaser.State {
-  init (score) {
+  init (score, fader) {
     this.finalScore = score;
+    this.game.stage.removeChild(fader);
+    this.fader = new ScreenFader(this.game, {x: 0, y: 0}, 'progressBar', '#F0000', 1);
+    this.fader.fadeOut(800);
   }
 
   create () {
@@ -40,8 +43,7 @@ class EndingScene extends Phaser.State {
     gente2 = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('people2').height, 'people2');
     entities.add(gente2);
 
-    scoreText = new RainbowText(this.game, 160, logicWorldBounds.height - 6, `SCORE: ${this.finalScore || '0000'}`);
-    scoreText.anchor.set(0.5);
+    scoreText = this.game.add.bitmapText(100, logicWorldBounds.height - 16, 'nokia16', `SCORE: ${this.finalScore || '00000'}`, 16);
     restart = this.game.add.button(0, logicWorldBounds.height - this.game.cache.getImage('restart').height, 'restart', this.restartGame, this, 2, 1, 0);
     fb = this.game.add.button(logicWorldBounds.width - 26 * 3, logicWorldBounds.height - this.game.cache.getImage('fb').height - 2, 'fb', this.facebook, this, 2, 1, 0);
     tw = this.game.add.button(logicWorldBounds.width - 26 * 2, logicWorldBounds.height - this.game.cache.getImage('tw').height - 2, 'tw', this.twitter, this, 2, 1, 0);

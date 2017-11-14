@@ -58,7 +58,7 @@ class GameState extends State {
     scoreText = overlays.add(this.game.add.bitmapText(130, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Pelon', 16));
     items = new Collectables(this.game, scoreText, 1000, 2000);
-    obstacles = new Collectables(this.game, scoreText, 2000, 6000);
+    obstacles = new Collectables(this.game, scoreText, 2215, 6458);
     this.createBackgrounds(states[0].state);
     items.createAreaItems(states[0].state.items);
     obstacles.createAreaItems(states[0].state.obstacles);
@@ -69,13 +69,19 @@ class GameState extends State {
     player.body.onCollide.add(items.resolveItemCollision, this);
     player.body.onCollide.add(obstacles.resolveItemCollision, this);
     entities.add(player);
-    fader = new ScreenFader(this.game, {x: 0, y: 0}, 'progressBar', '#F0000');
+    fader = new ScreenFader(this.game, {x: 0, y: 0}, 'progressBar', '#F0000', 0);
     currentTime = 0;
     timer = this.game.time.create(false);
     timer.loop(1000, this.checkState, this);
-    timer.add(1000, () => { items.spawnItem(timer); }, items);
-    timer.add(2300, () => { obstacles.spawnItem(timer); }, obstacles);
+    this.itemsAndObstaclesTimer = this.game.time.create(false);
+    this.startItemsAndObstacles();
     timer.start();
+    this.itemsAndObstaclesTimer.start();
+  }
+
+  startItemsAndObstacles () {
+    this.itemsAndObstaclesTimer.add(2000, () => { items.spawnItem(this.itemsAndObstaclesTimer); }, this.game);
+    this.itemsAndObstaclesTimer.add(6300, () => { obstacles.spawnItem(this.itemsAndObstaclesTimer); }, this.game);
   }
 
   setPauseOnVisibilityLost () {
@@ -149,13 +155,14 @@ class GameState extends State {
         if (state.type === 'ending') {
           fader.fadeIn(800);
           return player.bounceOutOfScene(() => {
-            this.game.stage.removeChild(fader);
-            return this.state.start('EndingState', true, false, player.score);
+            return this.state.start('EndingState', true, false, player.score, fader);
           });
         }
         fader.fadeIn(800);
+        this.itemsAndObstaclesTimer.removeAll();
         items.createAreaItems(state.items);
         obstacles.createAreaItems(state.obstacles);
+        this.startItemsAndObstacles();
         player.bounceOutOfScene(() => {
           this.createBackgrounds(state);
           player.swapAssets(state.player);
