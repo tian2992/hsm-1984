@@ -82,7 +82,6 @@ class LoadState extends Phaser.State {
   }
 
   loadComplete () {
-    console.log('Load Complete');
     assetsLoaded = true;
   }
 
