@@ -43,7 +43,7 @@ class EndingScene extends Phaser.State {
     gente2 = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('people2').height, 'people2');
     entities.add(gente2);
 
-    scoreText = this.game.add.bitmapText(120, logicWorldBounds.height - 26, 'nokia16', `SCORE: ${this.finalScore || '0000'}`, 16);
+    scoreText = this.game.add.bitmapText(100, logicWorldBounds.height - 16, 'nokia16', `SCORE: ${this.finalScore || '00000'}`, 16);
     restart = this.game.add.button(0, logicWorldBounds.height - this.game.cache.getImage('restart').height, 'restart', this.restartGame, this, 2, 1, 0);
     fb = this.game.add.button(logicWorldBounds.width - 26 * 3, logicWorldBounds.height - this.game.cache.getImage('fb').height - 2, 'fb', this.facebook, this, 2, 1, 0);
     tw = this.game.add.button(logicWorldBounds.width - 26 * 2, logicWorldBounds.height - this.game.cache.getImage('tw').height - 2, 'tw', this.twitter, this, 2, 1, 0);
