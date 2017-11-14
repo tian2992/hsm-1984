@@ -1,10 +1,10 @@
 const Phaser = require('phaser');
 
 class ScreenFader extends Phaser.Sprite {
-  constructor (game, center, asset, color, frame) {
+  constructor (game, center, asset, color, alpha, frame) {
     super(game, center.x, center.y, asset, frame);
     this.game = game;
-    this.alpha = 0;
+    this.alpha = alpha;
     this.tint = color;
     this.scale.setTo(this.game.world.width, this.game.world.height);
     this.game.stage.addChild(this);
