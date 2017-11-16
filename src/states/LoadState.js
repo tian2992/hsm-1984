@@ -4,11 +4,9 @@ let assetsLoaded = false;
 class LoadState extends Phaser.State {
   preload () {
     this.game.load.onLoadComplete.add(this.loadComplete, this);
-    this.progressBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'progressBar');
-    this.progressBar.anchor.setTo(0.5);
+    this.progressBar = this.add.sprite(0, this.game.world.height - 10, 'progressBar');
+    this.progressBar.anchor.setTo(0);
     this.load.setPreloadSprite(this.progressBar);
-    this.load.bitmapFont('font', 'assets/fonts/nokia16.png', 'assets/fonts/nokia16.xml');
-
     this.load.image('square', 'assets/sprites/ui/square.png');
 
     this.load.image('collider', 'assets/sprites/collider.png');
@@ -72,12 +70,11 @@ class LoadState extends Phaser.State {
 
     // test ui
     this.load.spritesheet('boton', 'assets/sprites/ui/boton.png', 79, 25, 2);
-
+    this.load.bitmapFont('nokia16', 'assets/fonts/nokia16.png', 'assets/fonts/nokia16.xml');
     this.load.audio('theme', ['assets/audio/1984.mp3']);
     this.load.json('states', 'assets/data/states.json');
     this.load.json('lyrics', 'assets/data/lyrics.json');
 
-    this.load.bitmapFont('nokia16', 'assets/fonts/nokia16.png', 'assets/fonts/nokia16.xml');
     this.game.load.start();
   }
 
