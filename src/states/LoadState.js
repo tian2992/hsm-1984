@@ -67,6 +67,7 @@ class LoadState extends Phaser.State {
     this.load.spritesheet('fb', 'assets/sprites/ui/facebook.png', 26, 28, 2);
     this.load.spritesheet('insta', 'assets/sprites/ui/insta.png', 26, 28, 2);
     this.load.spritesheet('tw', 'assets/sprites/ui/twiter.png', 26, 28, 2);
+    this.load.spritesheet('yt', 'assets/sprites/ui/youtube.png', 26, 28, 2);
 
     // test ui
     this.load.spritesheet('boton', 'assets/sprites/ui/boton.png', 79, 25, 2);
