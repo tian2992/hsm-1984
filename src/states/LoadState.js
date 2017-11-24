@@ -8,7 +8,8 @@ class LoadState extends Phaser.State {
     this.progressBar.anchor.setTo(0);
     this.load.setPreloadSprite(this.progressBar);
     this.load.image('square', 'assets/sprites/ui/square.png');
-
+    this.load.image('credits', 'assets/sprites/ui/1984.png');
+    
     this.load.image('collider', 'assets/sprites/collider.png');
     // for area 1
     this.load.image('mountains', 'assets/sprites/backgrounds/Area1/mountains.png');
