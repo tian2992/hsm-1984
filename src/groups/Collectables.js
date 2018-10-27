@@ -4,12 +4,13 @@ import Item from '../entities/Item';
 let itemHeights = [];
 let scoreText;
 let scoreTemplate = '0000';
+let pauseFunction;
 
 class Items extends Group {
-  constructor (game, text, minimumTimeToSpawnItem, maximumTimeToSpawnItem, pauseFunction) {
+  constructor (game, text, minimumTimeToSpawnItem, maximumTimeToSpawnItem, pauseFn) {
     super(game);
     this.game = game;
-    this.pauseFunction = pauseFunction;
+    pauseFunction = pauseFn;
     this.minimumTimeToSpawnItem = minimumTimeToSpawnItem;
     this.maximumTimeToSpawnItem = maximumTimeToSpawnItem;
     this.itemsSpawned = 0;
@@ -49,7 +50,7 @@ class Items extends Group {
     item.setPosition(this.game.world.width + item.width, item.height);
     item.destroy();
 
-    this.pauseFunction();
+    pauseFunction();
   }
 }
 

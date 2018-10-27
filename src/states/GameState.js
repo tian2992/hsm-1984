@@ -58,7 +58,8 @@ class GameState extends State {
     timerText = overlays.add(this.game.add.bitmapText(260, 2, 'nokia16', '00:00', 16));
     scoreText = overlays.add(this.game.add.bitmapText(130, 2, 'nokia16', '0000', 16));
     playerText = overlays.add(this.game.add.bitmapText(4, 2, 'nokia16', 'Player 1', 16));
-    items = new Collectables(this.game, scoreText, 1000, 2000, this.OnPauseButton);
+    let pauseFunction = this.OnPauseButton(this);
+    items = new Collectables(this.game, scoreText, 1000, 2000, pauseFunction);
     // obstacles = new Collectables(this.game, scoreText, 2215, 6458);
     this.createBackgrounds(states[0].state);
     this.createQuestionMenu();
@@ -114,23 +115,27 @@ class GameState extends State {
     }
   }
 
-  OnPauseButton () {
-// When the paus button is pressed, we pause the game
-    this.game.paused = true;
+  OnPauseButton (context) {
+    // When the paus button is pressed, we pause the game
+    let pause = function () {
+      context.game.paused = true;
 
-    questions = this.game.add.group();
-    let pauseMenuBackground = this.game.add.sprite(0, logicWorldBounds.height * 0.33, 'letterBox');
-    pauseMenuBackground.scale.setTo(0.5, 5);
-    questions.add(pauseMenuBackground);
+      questions = context.game.add.group();
+      let pauseMenuBackground = context.game.add.sprite(0, logicWorldBounds.height * 0.33, 'letterBox');
+      pauseMenuBackground.scale.setTo(0.5, 5);
+      questions.add(pauseMenuBackground);
 
-    questions.add(this.game.add.bitmapText(100, logicWorldBounds.height / 2 - 30, 'nokia16', 'Pregunta', 16));
-    let button = this.game.add.bitmapText(100, logicWorldBounds.height / 2 + 20, 'nokia16', 'Respuesta 1', 16);
-    questions.add(button);
-    let button2 = this.game.add.bitmapText(100, logicWorldBounds.height / 2, 'nokia16', 'Respuesta 2', 16);
-    questions.add(button2);
-    let button3 = this.game.add.bitmapText(100, logicWorldBounds.height / 2 + 40, 'nokia16', 'Respuesta 3', 16);
-    questions.add(button3);
-    this.input.onUp.add(this.unpause, this);
+      questions.add(context.game.add.bitmapText(100, logicWorldBounds.height / 2 - 30, 'nokia16', 'Pregunta', 16));
+      let button = context.game.add.bitmapText(100, logicWorldBounds.height / 2 + 20, 'nokia16', 'Respuesta 1', 16);
+      questions.add(button);
+      let button2 = context.game.add.bitmapText(100, logicWorldBounds.height / 2, 'nokia16', 'Respuesta 2', 16);
+      questions.add(button2);
+      let button3 = context.game.add.bitmapText(100, logicWorldBounds.height / 2 + 40, 'nokia16', 'Respuesta 3', 16);
+      questions.add(button3);
+      context.input.onUp.add(context.unpause, context);
+    };
+
+    return pause;
   }
 
   setLyricsText (line) {
