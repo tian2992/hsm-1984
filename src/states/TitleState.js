@@ -11,9 +11,9 @@ class TitleScene extends Phaser.State {
     button.animations.add('idle', [0, 1]);
     button.animations.play('idle', 2, true);
     backgrounds = this.game.add.group();
-    logo = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('logo').height, 'logo');
-    this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('credits').height, 'credits');
-    backgrounds.add(logo);
+    // logo = this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('logo').height, 'logo');
+    // this.game.add.sprite(0, logicWorldBounds.height - this.game.cache.getImage('credits').height, 'credits');
+    // backgrounds.add(logo);
     backgrounds.add(button);
   }
 

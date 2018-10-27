@@ -19,7 +19,7 @@ class Player extends Phaser.Sprite {
     this.jumpsLeft = this.jumpsLeft;
     this.canJump = true;
     this.score = 0;
-    this.animations.add('walk', [0, 1, 2]);
+    this.animations.add('walk', [0, 1, 2, 3]);
     if (asset === 'pug') {
       this.body.width = 42;
       this.body.height = 42;
@@ -33,9 +33,9 @@ class Player extends Phaser.Sprite {
       gravity = specialGravity;
       jumpHeight = specialJump;
     } else {
-      this.body.width = 30;
-      this.body.height = 55;
-      this.animations.add('jump', [3]);
+      this.body.width = 20;
+      this.body.height = 34;
+      this.animations.add('jump', [7]);
       gravity = normalGravity;
       jumpHeight = normalJump;
     }
@@ -96,19 +96,21 @@ class Player extends Phaser.Sprite {
   }
 
   update () {
-    if (this.body.blocked.down) {
-      this.body.velocity.y = 0;
-      this.animations.play('walk', 8, true);
-      this.jumpsLeft = totalJumps;
-    }
-    if ((this.game.input.activePointer.isDown || this.cursors.up.isDown) && this.jumpsLeft > 0 && this.canJump) {
-      this.body.velocity.y = jumpHeight;
-      this.jumpsLeft--;
-      this.canJump = false;
-      this.animations.play('jump', 8, this.name === 'pug');
-    }
-    if (this.game.input.activePointer.isUp) {
-      this.canJump = true;
+    if (this.game.paused === false) {
+      if (this.body.blocked.down) {
+        this.body.velocity.y = 0;
+        this.animations.play('walk', 8, true);
+        this.jumpsLeft = totalJumps;
+      }
+      if ((this.game.input.activePointer.isDown || this.cursors.up.isDown) && this.jumpsLeft > 0 && this.canJump) {
+        this.body.velocity.y = jumpHeight;
+        this.jumpsLeft--;
+        this.canJump = false;
+        this.animations.play('jump', 8, this.name === 'pug');
+      }
+      if (this.game.input.activePointer.isUp) {
+        this.canJump = true;
+      }
     }
   }
 }
